@@ -19,6 +19,11 @@ namespace Servico
             return Logica.Usuario.ObterUsuarioPorCodigo(codigo);
         }
 
+        public Entidades.Usuario Autenticar(string codigo, string senha)
+        {
+            return Logica.Usuario.Autenticar(codigo, senha);
+        }
+
         public void InserirUsuario(ref Entidades.Usuario usuario)
         {
             Logica.Usuario.Inserir(ref usuario);
