@@ -14,6 +14,7 @@ namespace Dados
         static IDbCommand s_comandoObterUsuarioPorCodigo;
         static IDbCommand s_comandoInserir;
         static IDbCommand s_comandoAlterar;
+        static IDbCommand s_comandoDeletar;
 
         public static Entidades.Usuario ObterUsuarioPorCodigo(string codigo)
         {
@@ -43,12 +44,21 @@ namespace Dados
 
             s_comandoObterUsuarioPorCodigo.Parameters.Add(parametro);
 
-            dados = s_comandoObterUsuarioPorCodigo.ExecuteReader();
+            try
+            {
+                dados = s_comandoObterUsuarioPorCodigo.ExecuteReader();
 
-            if (dados != null && dados.Read())
-                PreencherEntidade(ref usuario, dados);
-
-            s_comandoObterUsuarioPorCodigo.Connection.Close();
+                if (dados != null && dados.Read())
+                    PreencherEntidade(ref usuario, dados);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+            finally
+            {
+                s_comandoDeletar.Connection.Close();
+            }
 
             return usuario;
         }
@@ -70,9 +80,18 @@ namespace Dados
 
             AdicionarParametros(ref s_comandoInserir, usuario, true);
 
-            s_comandoInserir.ExecuteNonQuery();
-
-            s_comandoInserir.Connection.Close();
+            try
+            {
+                s_comandoInserir.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+            finally
+            {
+                s_comandoDeletar.Connection.Close();
+            }
         }
 
         public static void Alterar(ref Entidades.Usuario usuario)
@@ -92,9 +111,58 @@ namespace Dados
 
             AdicionarParametros(ref s_comandoAlterar, usuario, false);
 
-            s_comandoAlterar.ExecuteNonQuery();
+            try
+            {
+                s_comandoAlterar.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+            finally
+            {
+                s_comandoDeletar.Connection.Close();
+            }
+        }
 
-            s_comandoAlterar.Connection.Close();
+        public static void Deletar(Entidades.Usuario usuario)
+        {
+            if (s_comandoDeletar == null)
+            {
+                s_comandoDeletar = Conexao.ObterConexao().CreateCommand();
+
+                s_comandoDeletar.CommandText = "DELETE FROM USUARIOS WHERE CODIGO = @codigo";
+                s_comandoDeletar.CommandType = CommandType.Text;
+            }
+            else
+            {
+                if (s_comandoDeletar.Connection.State != ConnectionState.Open)
+                    s_comandoDeletar.Connection.Open();
+            }
+
+            s_comandoDeletar.Parameters.Clear();
+
+            IDbDataParameter parametro = s_comandoDeletar.CreateParameter();
+
+            parametro.ParameterName = "codigo";
+            parametro.DbType = DbType.String;
+            parametro.Size = 30;
+            parametro.Value = usuario.Codigo;
+
+            s_comandoDeletar.Parameters.Add(parametro);
+
+            try
+            {
+                s_comandoDeletar.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+            finally
+            {
+                s_comandoDeletar.Connection.Close();
+            }
         }
 
         private static void AdicionarParametros(ref IDbCommand comando, Entidades.Usuario usuario, bool inclusao)

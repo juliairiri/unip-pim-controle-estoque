@@ -24,6 +24,9 @@ namespace Servico
         [OperationContract]
         void AlterarUsuario(ref Entidades.Usuario usuario);
 
+        [OperationContract]
+        void DeletarUsuario(Entidades.Usuario usuario);
+
         #endregion
     }
 }

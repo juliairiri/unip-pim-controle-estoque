@@ -36,16 +36,17 @@
             this.txtCodigo = new Desktop.TextBox();
             this.lblCodigo = new Desktop.Label();
             this.btnConsultar = new Desktop.Button();
+            this.btnExcluir = new Desktop.Button();
             this.SuspendLayout();
             // 
             // btnSalvar
             // 
             this.btnSalvar.EstadosExibicaoPossiveis = null;
             this.btnSalvar.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnSalvar.Location = new System.Drawing.Point(93, 102);
+            this.btnSalvar.Location = new System.Drawing.Point(116, 102);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 13;
+            this.btnSalvar.Size = new System.Drawing.Size(98, 23);
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -56,8 +57,8 @@
             this.btnInserir.Font = new System.Drawing.Font("Verdana", 9F);
             this.btnInserir.Location = new System.Drawing.Point(12, 102);
             this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(75, 23);
-            this.btnInserir.TabIndex = 12;
+            this.btnInserir.Size = new System.Drawing.Size(98, 23);
+            this.btnInserir.TabIndex = 4;
             this.btnInserir.Text = "Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
             this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
@@ -69,7 +70,7 @@
             this.txtNome.Location = new System.Drawing.Point(12, 74);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(334, 22);
-            this.txtNome.TabIndex = 11;
+            this.txtNome.TabIndex = 3;
             // 
             // lblNome
             // 
@@ -90,7 +91,7 @@
             this.chkAtivo.Location = new System.Drawing.Point(200, 31);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(57, 18);
-            this.chkAtivo.TabIndex = 9;
+            this.chkAtivo.TabIndex = 2;
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
             // 
@@ -101,7 +102,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(12, 27);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(182, 22);
-            this.txtCodigo.TabIndex = 8;
+            this.txtCodigo.TabIndex = 1;
             // 
             // lblCodigo
             // 
@@ -118,18 +119,31 @@
             // 
             this.btnConsultar.EstadosExibicaoPossiveis = new EstadoExibicao[0];
             this.btnConsultar.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnConsultar.Location = new System.Drawing.Point(174, 102);
+            this.btnConsultar.Location = new System.Drawing.Point(324, 102);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
-            this.btnConsultar.TabIndex = 14;
+            this.btnConsultar.Size = new System.Drawing.Size(98, 23);
+            this.btnConsultar.TabIndex = 7;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.btnExcluir.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnExcluir.Location = new System.Drawing.Point(220, 102);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(98, 23);
+            this.btnExcluir.TabIndex = 6;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // FormUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(408, 146);
+            this.ClientSize = new System.Drawing.Size(437, 139);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnInserir);
@@ -155,5 +169,6 @@
         private TextBox txtCodigo;
         private Label lblCodigo;
         private Button btnConsultar;
+        private Button btnExcluir;
     }
 }
