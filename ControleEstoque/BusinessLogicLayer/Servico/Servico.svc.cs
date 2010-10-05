@@ -29,6 +29,11 @@ namespace Servico
             Logica.Usuario.Alterar(ref usuario);
         }
 
+        public void DeletarUsuario(Entidades.Usuario usuario)
+        {
+            Logica.Usuario.Deletar(usuario);
+        }
+
         #endregion
     }
 }

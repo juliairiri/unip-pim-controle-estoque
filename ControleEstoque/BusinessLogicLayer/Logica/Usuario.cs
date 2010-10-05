@@ -17,6 +17,9 @@ namespace Logica
 
         public static void Inserir(ref Entidades.Usuario usuario)
         {
+            if (usuario == null)
+                throw new Exception("Usuário não informado para Inclusão");
+            
             if (string.IsNullOrEmpty(usuario.Codigo))
                 throw new Exception("Por favor informe o Código do Usuário");
 
@@ -37,6 +40,9 @@ namespace Logica
 
         public static void Alterar(ref Entidades.Usuario usuario)
         {
+            if (usuario == null)
+                throw new Exception("Usuário não informado para Alteração");
+
             if (string.IsNullOrEmpty(usuario.Nome))
                 throw new Exception("Por favor informe o Nome do Usuário");
 
@@ -47,6 +53,21 @@ namespace Logica
             catch (Exception ex)
             {
                 throw new Exception("Não foi possível realizar a Alteração do Usuário");
+            }
+        }
+
+        public static void Deletar(Entidades.Usuario usuario)
+        {
+            if (usuario == null)
+                throw new Exception("Usuário não informado para Exclusão");
+
+            try
+            {
+                Dados.Usuario.Deletar(usuario);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível realizar a Exclusão do Usuário");
             }
         }
     }
