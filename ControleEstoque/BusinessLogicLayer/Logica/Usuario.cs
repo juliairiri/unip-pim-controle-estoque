@@ -29,6 +29,8 @@ namespace Logica
             // pesquisar o usuário
             Entidades.Usuario usuario = ObterUsuarioPorCodigo(codigo);
 
+            // se não encontrou o usuário e o usuário pesquisado for "admin"
+            // incluir o usuário administrador na base
             if (usuario == null && codigo == "admin")
             {
                 Entidades.Usuario usuarioAdmin = new Entidades.Usuario();
@@ -45,7 +47,30 @@ namespace Logica
             if (usuario == null || usuario.Senha.Trim() != senhaCriptografada.Trim())
                 throw new Exception("Usuário ou Senha inválidos");
 
+            Contexto.Usuario = usuario;
+
             return usuario;
+        }
+
+        public static void AlterarSenha(ref Entidades.Usuario usuario, string senha)
+        {
+            if (string.IsNullOrEmpty(senha))
+                throw new Exception("Por favor informe a Senha do Usuário");
+
+            if (usuario.Codigo != "admin" && usuario.Codigo != Contexto.Usuario.Codigo)
+                throw new Exception("Você não pode alterar a Senha de outro Usuário");
+
+            usuario.Senha = Utilidades.Criptografia.Criptografar(senha);
+
+            try
+            {
+                Logica.Usuario.Alterar(ref usuario);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível realizar alterar a Senha do Usuário");
+            }
+
         }
 
         public static void Inserir(ref Entidades.Usuario usuario)
@@ -59,7 +84,8 @@ namespace Logica
             if (string.IsNullOrEmpty(usuario.Nome))
                 throw new Exception("Por favor informe o Nome do Usuário");
 
-            usuario.Senha = Utilidades.Criptografia.Criptografar("1234");
+            if (string.IsNullOrEmpty(usuario.Senha))
+                usuario.Senha = Utilidades.Criptografia.Criptografar("1234");
 
             try
             {

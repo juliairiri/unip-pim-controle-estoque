@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{000A0CB1-1DDC-408A-99CC-4BC6E8D6D636}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -61,6 +61,12 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormUsuariosAlterarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormUsuariosAlterarSenha.Designer.cs">
+      <DependentUpon>FormUsuariosAlterarSenha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormAutenticacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,11 +79,20 @@
     <Compile Include="Formularios\FormUsuarios.Designer.cs">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormUsuariosConsultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormUsuariosConsultar.Designer.cs">
+      <DependentUpon>FormUsuariosConsultar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormUsuariosAlterarSenha.resx">
+      <DependentUpon>FormUsuariosAlterarSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormAutenticacao.resx">
       <DependentUpon>FormAutenticacao.cs</DependentUpon>
@@ -86,6 +101,9 @@
     <EmbeddedResource Include="Formularios\FormUsuarios.resx">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormUsuariosConsultar.resx">
+      <DependentUpon>FormUsuariosConsultar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

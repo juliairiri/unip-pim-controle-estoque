@@ -22,6 +22,9 @@ namespace Servico
         Entidades.Usuario Autenticar(string codigo, string senha);
 
         [OperationContract]
+        void AlterarSenha(ref Entidades.Usuario usuario, string senha);
+
+        [OperationContract]
         void InserirUsuario(ref Entidades.Usuario usuario);
 
         [OperationContract]

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
-            this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnCadastros = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.módulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnSair = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,29 +40,29 @@
             // 
             this.menuPrincipal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrosToolStripMenuItem,
+            this.mnCadastros,
             this.módulosToolStripMenuItem,
-            this.sairToolStripMenuItem});
+            this.mnSair});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
             this.menuPrincipal.Size = new System.Drawing.Size(1159, 24);
             this.menuPrincipal.TabIndex = 1;
             this.menuPrincipal.Text = "menuStrip1";
             // 
-            // cadastrosToolStripMenuItem
+            // mnCadastros
             // 
-            this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuUsuarios});
-            this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.cadastrosToolStripMenuItem.Text = "Cadastros";
+            this.mnCadastros.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnUsuarios});
+            this.mnCadastros.Name = "mnCadastros";
+            this.mnCadastros.Size = new System.Drawing.Size(77, 20);
+            this.mnCadastros.Text = "Cadastros";
             // 
-            // menuUsuarios
+            // mnUsuarios
             // 
-            this.menuUsuarios.Name = "menuUsuarios";
-            this.menuUsuarios.Size = new System.Drawing.Size(123, 22);
-            this.menuUsuarios.Text = "Usuários";
-            this.menuUsuarios.Click += new System.EventHandler(this.menuUsuarios_Click);
+            this.mnUsuarios.Name = "mnUsuarios";
+            this.mnUsuarios.Size = new System.Drawing.Size(152, 22);
+            this.mnUsuarios.Text = "Usuários";
+            this.mnUsuarios.Click += new System.EventHandler(this.mnUsuarios_Click);
             // 
             // módulosToolStripMenuItem
             // 
@@ -70,11 +70,12 @@
             this.módulosToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.módulosToolStripMenuItem.Text = "Módulos";
             // 
-            // sairToolStripMenuItem
+            // mnSair
             // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.sairToolStripMenuItem.Text = "Sair";
+            this.mnSair.Name = "mnSair";
+            this.mnSair.Size = new System.Drawing.Size(42, 20);
+            this.mnSair.Text = "Sair";
+            this.mnSair.Click += new System.EventHandler(this.mnSair_Click);
             // 
             // FormPrincipal
             // 
@@ -88,6 +89,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FormPrincipal";
             this.Text = "Controle de Estoque";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.FormPrincipal_Shown);
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();
@@ -99,10 +101,10 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuPrincipal;
-        private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnCadastros;
         private System.Windows.Forms.ToolStripMenuItem módulosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menuUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem mnSair;
+        private System.Windows.Forms.ToolStripMenuItem mnUsuarios;
 
     }
 }
