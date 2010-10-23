@@ -30,9 +30,9 @@
         {
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.módulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,13 @@
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
+            // menuUsuarios
+            // 
+            this.menuUsuarios.Name = "menuUsuarios";
+            this.menuUsuarios.Size = new System.Drawing.Size(123, 22);
+            this.menuUsuarios.Text = "Usuários";
+            this.menuUsuarios.Click += new System.EventHandler(this.menuUsuarios_Click);
+            // 
             // módulosToolStripMenuItem
             // 
             this.módulosToolStripMenuItem.Name = "módulosToolStripMenuItem";
@@ -68,13 +75,6 @@
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.sairToolStripMenuItem.Text = "Sair";
-            // 
-            // menuUsuarios
-            // 
-            this.menuUsuarios.Name = "menuUsuarios";
-            this.menuUsuarios.Size = new System.Drawing.Size(152, 22);
-            this.menuUsuarios.Text = "Usuários";
-            this.menuUsuarios.Click += new System.EventHandler(this.menuUsuarios_Click);
             // 
             // FormPrincipal
             // 
@@ -88,6 +88,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FormPrincipal";
             this.Text = "Controle de Estoque";
+            this.Shown += new System.EventHandler(this.FormPrincipal_Shown);
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();
             this.ResumeLayout(false);

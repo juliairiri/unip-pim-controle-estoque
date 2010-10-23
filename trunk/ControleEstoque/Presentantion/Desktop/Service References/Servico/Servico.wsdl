@@ -144,6 +144,44 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IServico_Autenticar_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IServico_Autenticar_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IServico_InserirUsuario_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -271,6 +309,12 @@
   <wsdl:message name="IServico_ObterUsuarioPorCodigo_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObterUsuarioPorCodigoResponse" />
   </wsdl:message>
+  <wsdl:message name="IServico_Autenticar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Autenticar" />
+  </wsdl:message>
+  <wsdl:message name="IServico_Autenticar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticarResponse" />
+  </wsdl:message>
   <wsdl:message name="IServico_InserirUsuario_InputMessage">
     <wsdl:part name="parameters" element="tns:InserirUsuario" />
   </wsdl:message>
@@ -293,6 +337,10 @@
     <wsdl:operation name="ObterUsuarioPorCodigo">
       <wsdl:input wsaw:Action="http://tempuri.org/IServico/ObterUsuarioPorCodigo" message="tns:IServico_ObterUsuarioPorCodigo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServico/ObterUsuarioPorCodigoResponse" message="tns:IServico_ObterUsuarioPorCodigo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Autenticar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServico/Autenticar" message="tns:IServico_Autenticar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServico/AutenticarResponse" message="tns:IServico_Autenticar_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InserirUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IServico/InserirUsuario" message="tns:IServico_InserirUsuario_InputMessage" />
@@ -318,6 +366,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IServico_ObterUsuarioPorCodigo_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Autenticar">
+      <soap12:operation soapAction="http://tempuri.org/IServico/Autenticar" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IServico_Autenticar_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IServico_Autenticar_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
