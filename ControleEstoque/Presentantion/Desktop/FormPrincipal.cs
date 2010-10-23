@@ -24,5 +24,26 @@ namespace Desktop
             usuarios.MdiParent = this;
             usuarios.Show();
         }
+
+        private void FormPrincipal_Shown(object sender, EventArgs e)
+        {
+            bool autenticado = false;
+            
+            FormAutenticacao autenticacao = new FormAutenticacao();
+
+            if (autenticacao.ShowDialog() == DialogResult.OK)
+            {
+                if (autenticacao.Autenticado)
+                {
+                    autenticado = true;
+                    Contexto.Usuario = autenticacao.UsuarioAutenticado;
+                }
+            }
+
+            if (!autenticado)
+            {
+                this.Close();
+            }
+        }
     }
 }

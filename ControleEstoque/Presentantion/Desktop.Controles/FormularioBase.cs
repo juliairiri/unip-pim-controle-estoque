@@ -15,10 +15,10 @@ namespace Desktop.Controles
         public EstadoExibicao EstadoExibicaoAtual
         {
             get { return _estadoExibicaoAtual; }
-            set 
-            { 
-                _estadoExibicaoAtual = value; 
-                this.OnEstadoExibicaoChange(); 
+            set
+            {
+                _estadoExibicaoAtual = value;
+                this.OnEstadoExibicaoChange();
             }
         }
 
@@ -79,14 +79,7 @@ namespace Desktop.Controles
                 }
                 else if (controle is Desktop.Label)
                 {
-                    Desktop.Label label = controle as Desktop.Label;
-                    if (label.EstadosExibicaoPossiveis != null)
-                    {
-                        if (label.EstadosExibicaoPossiveis.Contains(EstadoExibicaoAtual))
-                            label.Enabled = true;
-                        else
-                            label.Enabled = false;
-                    }
+                    controle.Enabled = true;
                 }
                 else if (controle is Desktop.TextBox)
                 {

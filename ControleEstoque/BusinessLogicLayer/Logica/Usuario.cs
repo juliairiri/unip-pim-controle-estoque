@@ -23,17 +23,27 @@ namespace Logica
             if (string.IsNullOrEmpty(senha))
                 throw new Exception("Por favor informe a Senha do Usuário");
             
-            string mensagem = "Usuário ou Senha inválidos";
             // criptografar a senha digitada, nunca compara as senhas descriptografadas
             string senhaCriptografada = Utilidades.Criptografia.Criptografar(senha);
 
             // pesquisar o usuário
             Entidades.Usuario usuario = ObterUsuarioPorCodigo(codigo);
 
+            if (usuario == null && codigo == "admin")
+            {
+                Entidades.Usuario usuarioAdmin = new Entidades.Usuario();
+                usuarioAdmin.Codigo = "admin";
+                usuarioAdmin.Ativo = true;
+                usuarioAdmin.Nome = "Administrador";
+                usuarioAdmin.Senha = Utilidades.Criptografia.Criptografar("admin@01");
+
+                Logica.Usuario.Inserir(ref usuarioAdmin);
+            }
+
             // se não retorno a entidade é que não achou o usuário
             // ou se a senha não for igual retornar exceção
             if (usuario == null || usuario.Senha.Trim() != senhaCriptografada.Trim())
-                throw new Exception(mensagem);
+                throw new Exception("Usuário ou Senha inválidos");
 
             return usuario;
         }
