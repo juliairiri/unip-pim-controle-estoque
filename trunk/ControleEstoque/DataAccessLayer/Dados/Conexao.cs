@@ -9,7 +9,7 @@ namespace Dados
 {
     public static class Conexao
     {
-        static string s_ParametrosConexao = @"Data Source=DANIEL-PC\desenv;Initial Catalog=ControleEstoque;Integrated Security=True";
+        static string s_ParametrosConexao = @"Data Source=DANIEL-PC;Initial Catalog=ControleEstoque;Integrated Security=True";
         static IDbConnection s_Conexao;
         
         public static IDbConnection ObterConexao()

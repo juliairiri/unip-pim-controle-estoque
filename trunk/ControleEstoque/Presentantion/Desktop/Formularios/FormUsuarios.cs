@@ -31,6 +31,9 @@ namespace Desktop.Formularios
         {
             InitializeComponent();
 
+            this.Entidade = Contexto.Usuario;
+            this.PreencherFormulario();
+
             this.ConfigurarControles();
             this.EstadoExibicaoAtual = EstadoExibicao.Visualizando;
         }
@@ -48,16 +51,31 @@ namespace Desktop.Formularios
             this.btnSalvar.EstadosExibicaoPossiveis = new EstadoExibicao[] { EstadoExibicao.Incluindo, EstadoExibicao.Alterando };
             this.btnExcluir.EstadosExibicaoPossiveis = new EstadoExibicao[] { EstadoExibicao.Visualizando };
             this.btnConsultar.EstadosExibicaoPossiveis = new EstadoExibicao[] { EstadoExibicao.Visualizando };
+            this.btnAlterarSenha.EstadosExibicaoPossiveis = new EstadoExibicao[] { EstadoExibicao.Visualizando };
         }
 
         private void PreencherEntidade()
         {
-            if (this.Entidade == null)
+            if (this.Entidade == null || this.EstadoExibicaoAtual == EstadoExibicao.Incluindo)
                 this.Entidade = new Usuario();
 
             this.Entidade.Codigo = txtCodigo.Text;
             this.Entidade.Ativo = chkAtivo.Checked;
             this.Entidade.Nome = txtNome.Text;
+        }
+
+        private void PreencherFormulario()
+        {
+            this.txtCodigo.Text = this.Entidade.Codigo;
+            this.chkAtivo.Checked = this.Entidade.Ativo;
+            this.txtNome.Text = this.Entidade.Nome;
+        }
+
+        private void LimparFormulario()
+        {
+            this.txtCodigo.Text = string.Empty;
+            this.chkAtivo.Checked = false;
+            this.txtNome.Text = string.Empty;
         }
 
         #endregion
@@ -67,6 +85,8 @@ namespace Desktop.Formularios
         private void btnInserir_Click(object sender, EventArgs e)
         {
             this.EstadoExibicaoAtual = EstadoExibicao.Incluindo;
+
+            this.LimparFormulario();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -116,12 +136,20 @@ namespace Desktop.Formularios
 
             if (this.Entidade != null)
             {
-                txtCodigo.Text = this.Entidade.Codigo;
-                chkAtivo.Checked = this.Entidade.Ativo;
-                txtNome.Text = this.Entidade.Nome;
-
+                this.PreencherFormulario();
                 this.EstadoExibicaoAtual = EstadoExibicao.Visualizando;
             }
+        }
+
+        private void btnAlterarSenha_Click(object sender, EventArgs e)
+        {
+            FormUsuariosAlterarSenha senha = new FormUsuariosAlterarSenha();
+
+            if (senha.ShowDialog() == DialogResult.OK)
+            {
+                this.Entidade = Contexto.Usuario;
+                this.PreencherFormulario();
+            }            
         }
 
         #endregion

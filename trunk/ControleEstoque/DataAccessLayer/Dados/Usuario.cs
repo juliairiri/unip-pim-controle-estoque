@@ -57,7 +57,7 @@ namespace Dados
             }
             finally
             {
-                s_comandoDeletar.Connection.Close();
+                s_comandoObterUsuarioPorCodigo.Connection.Close();
             }
 
             return usuario;
@@ -90,7 +90,7 @@ namespace Dados
             }
             finally
             {
-                s_comandoDeletar.Connection.Close();
+                s_comandoInserir.Connection.Close();
             }
         }
 
@@ -121,7 +121,7 @@ namespace Dados
             }
             finally
             {
-                s_comandoDeletar.Connection.Close();
+                s_comandoAlterar.Connection.Close();
             }
         }
 

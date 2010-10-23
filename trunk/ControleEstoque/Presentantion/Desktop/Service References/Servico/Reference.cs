@@ -21,6 +21,9 @@ namespace Desktop.Servico {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/Autenticar", ReplyAction="http://tempuri.org/IServico/AutenticarResponse")]
         Entidades.Usuario Autenticar(string codigo, string senha);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/AlterarSenha", ReplyAction="http://tempuri.org/IServico/AlterarSenhaResponse")]
+        void AlterarSenha(ref Entidades.Usuario usuario, string senha);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/InserirUsuario", ReplyAction="http://tempuri.org/IServico/InserirUsuarioResponse")]
         void InserirUsuario(ref Entidades.Usuario usuario);
         
@@ -64,6 +67,10 @@ namespace Desktop.Servico {
         
         public Entidades.Usuario Autenticar(string codigo, string senha) {
             return base.Channel.Autenticar(codigo, senha);
+        }
+        
+        public void AlterarSenha(ref Entidades.Usuario usuario, string senha) {
+            base.Channel.AlterarSenha(ref usuario, senha);
         }
         
         public void InserirUsuario(ref Entidades.Usuario usuario) {

@@ -24,6 +24,11 @@ namespace Servico
             return Logica.Usuario.Autenticar(codigo, senha);
         }
 
+        public void AlterarSenha(ref Entidades.Usuario usuario, string senha)
+        {
+            Logica.Usuario.AlterarSenha(ref usuario, senha);
+        }
+
         public void InserirUsuario(ref Entidades.Usuario usuario)
         {
             Logica.Usuario.Inserir(ref usuario);

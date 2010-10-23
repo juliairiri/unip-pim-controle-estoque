@@ -21,11 +21,6 @@ namespace Desktop
 
         protected override void OnClick(System.EventArgs e)
         {
-            FormularioBase formulario = this.Parent as FormularioBase;
-
-            if (formulario.EstadoExibicaoAtual == EstadoExibicao.Visualizando)
-                formulario.EstadoExibicaoAtual = EstadoExibicao.Alterando;
-
             base.OnClick(e);
         }
     }

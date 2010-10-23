@@ -10,22 +10,11 @@ namespace Utilidades
     {
         public static string Criptografar(string dado)
         {
-            RSACryptoServiceProvider provider = new RSACryptoServiceProvider(1024);
-            ASCIIEncoding encoding = new ASCIIEncoding();
-            byte[] bytes = encoding.GetBytes(dado);
-            byte[] criptografado = provider.Encrypt(bytes, false);
+            MD5 hash = MD5.Create();
+            byte[] bytes = Encoding.ASCII.GetBytes(dado);
+            byte[] criptografado = hash.ComputeHash(bytes);
 
-            return encoding.GetString(criptografado);
-        }
-
-        public static string Descriptografar(string dado)
-        {
-            RSACryptoServiceProvider provider = new RSACryptoServiceProvider(1024);
-            ASCIIEncoding encoding = new ASCIIEncoding();
-            byte[] bytes = encoding.GetBytes(dado);
-            byte[] descriptografado = provider.Decrypt(bytes, false);
-
-            return encoding.GetString(descriptografado);
+            return BitConverter.ToString(criptografado);
         }
     }
 }

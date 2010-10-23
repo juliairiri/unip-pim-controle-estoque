@@ -18,7 +18,7 @@ namespace Desktop
             InitializeComponent();
         }
 
-        private void menuUsuarios_Click(object sender, EventArgs e)
+        private void mnUsuarios_Click(object sender, EventArgs e)
         {
             FormUsuarios usuarios = new FormUsuarios();
             usuarios.MdiParent = this;
@@ -44,6 +44,11 @@ namespace Desktop
             {
                 this.Close();
             }
+        }
+
+        private void mnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

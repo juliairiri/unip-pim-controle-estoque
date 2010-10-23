@@ -37,15 +37,16 @@
             this.lblCodigo = new Desktop.Label();
             this.btnConsultar = new Desktop.Button();
             this.btnExcluir = new Desktop.Button();
+            this.btnAlterarSenha = new Desktop.Button();
             this.SuspendLayout();
             // 
             // btnSalvar
             // 
             this.btnSalvar.EstadosExibicaoPossiveis = null;
             this.btnSalvar.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnSalvar.Location = new System.Drawing.Point(116, 102);
+            this.btnSalvar.Location = new System.Drawing.Point(135, 102);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(98, 23);
+            this.btnSalvar.Size = new System.Drawing.Size(117, 23);
             this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -57,7 +58,7 @@
             this.btnInserir.Font = new System.Drawing.Font("Verdana", 9F);
             this.btnInserir.Location = new System.Drawing.Point(12, 102);
             this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(98, 23);
+            this.btnInserir.Size = new System.Drawing.Size(117, 23);
             this.btnInserir.TabIndex = 4;
             this.btnInserir.Text = "Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
@@ -69,7 +70,7 @@
             this.txtNome.Font = new System.Drawing.Font("Verdana", 9F);
             this.txtNome.Location = new System.Drawing.Point(12, 74);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(334, 22);
+            this.txtNome.Size = new System.Drawing.Size(363, 22);
             this.txtNome.TabIndex = 3;
             // 
             // lblNome
@@ -119,9 +120,9 @@
             // 
             this.btnConsultar.EstadosExibicaoPossiveis = new EstadoExibicao[0];
             this.btnConsultar.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnConsultar.Location = new System.Drawing.Point(324, 102);
+            this.btnConsultar.Location = new System.Drawing.Point(12, 131);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(98, 23);
+            this.btnConsultar.Size = new System.Drawing.Size(117, 23);
             this.btnConsultar.TabIndex = 7;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -131,18 +132,31 @@
             // 
             this.btnExcluir.EstadosExibicaoPossiveis = new EstadoExibicao[0];
             this.btnExcluir.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnExcluir.Location = new System.Drawing.Point(220, 102);
+            this.btnExcluir.Location = new System.Drawing.Point(258, 102);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(98, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(117, 23);
             this.btnExcluir.TabIndex = 6;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
+            // btnAlterarSenha
+            // 
+            this.btnAlterarSenha.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.btnAlterarSenha.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnAlterarSenha.Location = new System.Drawing.Point(135, 131);
+            this.btnAlterarSenha.Name = "btnAlterarSenha";
+            this.btnAlterarSenha.Size = new System.Drawing.Size(117, 23);
+            this.btnAlterarSenha.TabIndex = 11;
+            this.btnAlterarSenha.Text = "Alterar Senha";
+            this.btnAlterarSenha.UseVisualStyleBackColor = true;
+            this.btnAlterarSenha.Click += new System.EventHandler(this.btnAlterarSenha_Click);
+            // 
             // FormUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(437, 139);
+            this.ClientSize = new System.Drawing.Size(391, 166);
+            this.Controls.Add(this.btnAlterarSenha);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnSalvar);
@@ -170,5 +184,6 @@
         private Label lblCodigo;
         private Button btnConsultar;
         private Button btnExcluir;
+        private Button btnAlterarSenha;
     }
 }
