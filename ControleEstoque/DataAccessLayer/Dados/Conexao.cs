@@ -19,6 +19,7 @@ namespace Dados
                 s_Conexao = new SqlConnection(s_ParametrosConexao);
             }
 
+
             if (s_Conexao.State != ConnectionState.Open)
                 s_Conexao.Open();
 
