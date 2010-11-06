@@ -14,7 +14,7 @@ namespace Desktop
         public DataGridView()
         {
             this.Font = new Font("Verdana", 9);
-            this.EstadosExibicaoPossiveis = new EstadoExibicao[] { };
+            //this.EstadosExibicaoPossiveis = new EstadoExibicao[] { };
         }
     }
 }

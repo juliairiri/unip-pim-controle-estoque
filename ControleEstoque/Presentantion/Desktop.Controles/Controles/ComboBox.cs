@@ -16,7 +16,7 @@ namespace Desktop
         public ComboBox()
         {
             this.Font = new Font("Verdana", 9);
-            this.EstadosExibicaoPossiveis = new EstadoExibicao[] { };
+            //this.EstadosExibicaoPossiveis = new EstadoExibicao[] { };
         }
 
         protected override void OnSelectedIndexChanged(System.EventArgs e)

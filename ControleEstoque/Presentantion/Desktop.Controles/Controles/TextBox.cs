@@ -16,7 +16,7 @@ namespace Desktop
         public TextBox()
         {
             this.Font = new Font("Verdana", 9);
-            this.EstadosExibicaoPossiveis = new EstadoExibicao[] { };
+            //this.EstadosExibicaoPossiveis = new EstadoExibicao[] { };
         }
 
         protected override void OnTextChanged(System.EventArgs e)

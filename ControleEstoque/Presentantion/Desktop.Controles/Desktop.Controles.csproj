@@ -72,6 +72,9 @@
     <Compile Include="FormularioBase.Designer.cs">
       <DependentUpon>FormularioBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="GroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

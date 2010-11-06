@@ -35,10 +35,10 @@
             this.btnPesquisar = new Desktop.Button();
             this.lblResultados = new Desktop.Label();
             this.gridResultados = new Desktop.DataGridView();
-            this.btnSelecionar = new Desktop.Button();
             this.colunaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnSelecionar = new Desktop.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridResultados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,17 +127,6 @@
             this.gridResultados.Size = new System.Drawing.Size(538, 298);
             this.gridResultados.TabIndex = 6;
             // 
-            // btnSelecionar
-            // 
-            this.btnSelecionar.EstadosExibicaoPossiveis = new EstadoExibicao[0];
-            this.btnSelecionar.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnSelecionar.Location = new System.Drawing.Point(15, 396);
-            this.btnSelecionar.Name = "btnSelecionar";
-            this.btnSelecionar.Size = new System.Drawing.Size(81, 23);
-            this.btnSelecionar.TabIndex = 7;
-            this.btnSelecionar.Text = "&Selecionar";
-            this.btnSelecionar.UseVisualStyleBackColor = true;
-            // 
             // colunaCodigo
             // 
             this.colunaCodigo.HeaderText = "Código";
@@ -158,6 +147,17 @@
             this.colunaAtivo.ReadOnly = true;
             this.colunaAtivo.Width = 50;
             // 
+            // btnSelecionar
+            // 
+            this.btnSelecionar.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.btnSelecionar.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnSelecionar.Location = new System.Drawing.Point(15, 396);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(81, 23);
+            this.btnSelecionar.TabIndex = 7;
+            this.btnSelecionar.Text = "&Selecionar";
+            this.btnSelecionar.UseVisualStyleBackColor = true;
+            // 
             // FormUsuariosConsultar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +171,7 @@
             this.Controls.Add(this.chkPorNome);
             this.Controls.Add(this.chkPorCodigo);
             this.Name = "FormUsuariosConsultar";
+            this.Text = "Pesquisa Usuário";
             ((System.ComponentModel.ISupportInitialize)(this.gridResultados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
