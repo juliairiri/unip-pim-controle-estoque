@@ -27,6 +27,7 @@ namespace Dados
 
                 s_comandoObterUsuarioPorCodigo.CommandText = "SELECT * FROM USUARIOS WHERE CODIGO = @codigo";
                 s_comandoObterUsuarioPorCodigo.CommandType = CommandType.Text;
+                s_comandoObterUsuarioPorCodigo.Prepare();
             }
             else
             {
@@ -71,6 +72,7 @@ namespace Dados
 
                 s_comandoInserir.CommandText = "INSERT INTO USUARIOS (CODIGO, ATIVO, NOME, SENHA) VALUES (@codigo, @ativo, @nome, @senha)";
                 s_comandoInserir.CommandType = CommandType.Text;
+                s_comandoInserir.Prepare();
             }
             else
             {
@@ -78,7 +80,7 @@ namespace Dados
                     s_comandoInserir.Connection.Open();
             }
 
-            AdicionarParametros(ref s_comandoInserir, usuario, true);
+            AdicionarParametros(ref s_comandoInserir, usuario);
 
             try
             {
@@ -102,6 +104,7 @@ namespace Dados
 
                 s_comandoAlterar.CommandText = "UPDATE USUARIOS SET ATIVO = @ativo, NOME = @nome, SENHA = @senha WHERE CODIGO = @codigo";
                 s_comandoAlterar.CommandType = CommandType.Text;
+                s_comandoAlterar.Prepare();
             }
             else
             {
@@ -109,7 +112,7 @@ namespace Dados
                     s_comandoAlterar.Connection.Open();
             }
 
-            AdicionarParametros(ref s_comandoAlterar, usuario, false);
+            AdicionarParametros(ref s_comandoAlterar, usuario);
 
             try
             {
@@ -133,6 +136,7 @@ namespace Dados
 
                 s_comandoDeletar.CommandText = "DELETE FROM USUARIOS WHERE CODIGO = @codigo";
                 s_comandoDeletar.CommandType = CommandType.Text;
+                s_comandoDeletar.Prepare();
             }
             else
             {
@@ -165,7 +169,7 @@ namespace Dados
             }
         }
 
-        private static void AdicionarParametros(ref IDbCommand comando, Entidades.Usuario usuario, bool inclusao)
+        private static void AdicionarParametros(ref IDbCommand comando, Entidades.Usuario usuario)
         {
             IDbDataParameter parametro;
 

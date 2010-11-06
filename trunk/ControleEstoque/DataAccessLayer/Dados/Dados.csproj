@@ -58,6 +58,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Unidade.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
