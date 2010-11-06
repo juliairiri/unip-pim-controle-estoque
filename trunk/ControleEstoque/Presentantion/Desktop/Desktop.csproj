@@ -61,6 +61,30 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormLocaisEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormLocaisEstoque.Designer.cs">
+      <DependentUpon>FormLocaisEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormProdutos.Designer.cs">
+      <DependentUpon>FormProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormProdutosConversoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormProdutosConversoes.Designer.cs">
+      <DependentUpon>FormProdutosConversoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormUnidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormUnidades.Designer.cs">
+      <DependentUpon>FormUnidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormUsuariosAlterarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +114,18 @@
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormLocaisEstoque.resx">
+      <DependentUpon>FormLocaisEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormProdutos.resx">
+      <DependentUpon>FormProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormProdutosConversoes.resx">
+      <DependentUpon>FormProdutosConversoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormUnidades.resx">
+      <DependentUpon>FormUnidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormUsuariosAlterarSenha.resx">
       <DependentUpon>FormUsuariosAlterarSenha.cs</DependentUpon>

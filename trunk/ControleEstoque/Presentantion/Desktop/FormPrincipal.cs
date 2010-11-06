@@ -50,5 +50,26 @@ namespace Desktop
         {
             this.Close();
         }
+
+        private void mnProdutos_Click(object sender, EventArgs e)
+        {
+            FormProdutos produtos = new FormProdutos();
+            produtos.MdiParent = this;
+            produtos.Show();
+        }
+
+        private void mnMedidas_Click(object sender, EventArgs e)
+        {
+            FormUnidades unidades = new FormUnidades();
+            unidades.MdiParent = this;
+            unidades.Show();
+        }
+
+        private void mnLocaisEstoque_Click(object sender, EventArgs e)
+        {
+            FormLocaisEstoque locais = new FormLocaisEstoque();
+            locais.MdiParent = this;
+            locais.Show();
+        }
     }
 }

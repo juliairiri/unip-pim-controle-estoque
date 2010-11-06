@@ -166,7 +166,10 @@
             this.Controls.Add(this.chkAtivo);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblCodigo);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormUsuarios";
+            this.ShowIcon = false;
             this.Text = "Usuários";
             this.ResumeLayout(false);
             this.PerformLayout();

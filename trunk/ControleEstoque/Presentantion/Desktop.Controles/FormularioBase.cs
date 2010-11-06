@@ -77,7 +77,7 @@ namespace Desktop.Controles
                             datagrid.Enabled = false;
                     }
                 }
-                else if (controle is Desktop.Label)
+                else if ( (controle is Desktop.Label) || (controle is Desktop.GroupBox))
                 {
                     controle.Enabled = true;
                 }
