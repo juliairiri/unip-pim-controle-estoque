@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Dados
+namespace Entidades
 {
     [DataContract]
     public class Unidade
