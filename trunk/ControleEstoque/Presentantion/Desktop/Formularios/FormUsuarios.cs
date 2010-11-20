@@ -111,7 +111,6 @@ namespace Desktop.Formularios
             {
                 MessageBox.Show(ex.Message, "Usuários", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

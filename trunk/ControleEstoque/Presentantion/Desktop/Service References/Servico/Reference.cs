@@ -32,6 +32,15 @@ namespace Desktop.Servico {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/DeletarUsuario", ReplyAction="http://tempuri.org/IServico/DeletarUsuarioResponse")]
         void DeletarUsuario(Entidades.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/ObterUnidadePorCodigo", ReplyAction="http://tempuri.org/IServico/ObterUnidadePorCodigoResponse")]
+        Entidades.Unidade ObterUnidadePorCodigo(string codigo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/InserirUnidade", ReplyAction="http://tempuri.org/IServico/InserirUnidadeResponse")]
+        void InserirUnidade(ref Entidades.Unidade usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/AlterarUnidade", ReplyAction="http://tempuri.org/IServico/AlterarUnidadeResponse")]
+        void AlterarUnidade(ref Entidades.Unidade usuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
@@ -83,6 +92,18 @@ namespace Desktop.Servico {
         
         public void DeletarUsuario(Entidades.Usuario usuario) {
             base.Channel.DeletarUsuario(usuario);
+        }
+        
+        public Entidades.Unidade ObterUnidadePorCodigo(string codigo) {
+            return base.Channel.ObterUnidadePorCodigo(codigo);
+        }
+        
+        public void InserirUnidade(ref Entidades.Unidade usuario) {
+            base.Channel.InserirUnidade(ref usuario);
+        }
+        
+        public void AlterarUnidade(ref Entidades.Unidade usuario) {
+            base.Channel.AlterarUnidade(ref usuario);
         }
     }
 }

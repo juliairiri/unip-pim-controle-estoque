@@ -96,5 +96,18 @@ namespace Desktop.Controles
         }
 
         public virtual void ConfigurarControles() { }
+
+        public void LimparFormulario()
+        {
+            foreach (Control c in this.Controls)
+            {
+                if (c is TextBox)
+                    (c as TextBox).Text = string.Empty;
+                else if (c is CheckBox)
+                    (c as CheckBox).Checked = false;
+                else if (c is ComboBox)
+                    (c as ComboBox).Items.Clear();
+            }
+        }
     }
 }

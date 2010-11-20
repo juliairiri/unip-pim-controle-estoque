@@ -34,5 +34,18 @@ namespace Servico
         void DeletarUsuario(Entidades.Usuario usuario);
 
         #endregion
+
+        #region Operações com a Unidade de Medida
+
+        [OperationContract]
+        Entidades.Unidade ObterUnidadePorCodigo(string codigo);
+
+        [OperationContract]
+        void InserirUnidade(ref Entidades.Unidade usuario);
+
+        [OperationContract]
+        void AlterarUnidade(ref Entidades.Unidade usuario);
+
+        #endregion
     }
 }

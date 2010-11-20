@@ -40,7 +40,8 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.EstadosExibicaoPossiveis = null;
+            this.txtCodigo.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Incluindo};
             this.txtCodigo.Font = new System.Drawing.Font("Verdana", 9F);
             this.txtCodigo.Location = new System.Drawing.Point(15, 26);
             this.txtCodigo.Name = "txtCodigo";
@@ -71,7 +72,10 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.EstadosExibicaoPossiveis = null;
+            this.txtDescricao.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
             this.txtDescricao.Font = new System.Drawing.Font("Verdana", 9F);
             this.txtDescricao.Location = new System.Drawing.Point(15, 68);
             this.txtDescricao.Name = "txtDescricao";
@@ -80,7 +84,8 @@
             // 
             // btnInserir
             // 
-            this.btnInserir.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.btnInserir.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando};
             this.btnInserir.Font = new System.Drawing.Font("Verdana", 9F);
             this.btnInserir.Location = new System.Drawing.Point(15, 96);
             this.btnInserir.Name = "btnInserir";
@@ -88,10 +93,13 @@
             this.btnInserir.TabIndex = 6;
             this.btnInserir.Text = "&Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnSalvar
             // 
-            this.btnSalvar.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.btnSalvar.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
             this.btnSalvar.Font = new System.Drawing.Font("Verdana", 9F);
             this.btnSalvar.Location = new System.Drawing.Point(122, 96);
             this.btnSalvar.Name = "btnSalvar";
@@ -99,10 +107,12 @@
             this.btnSalvar.TabIndex = 7;
             this.btnSalvar.Text = "&Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnConsultar
             // 
-            this.btnConsultar.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.btnConsultar.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando};
             this.btnConsultar.Font = new System.Drawing.Font("Verdana", 9F);
             this.btnConsultar.Location = new System.Drawing.Point(229, 96);
             this.btnConsultar.Name = "btnConsultar";
@@ -114,7 +124,10 @@
             // chkInativo
             // 
             this.chkInativo.AutoSize = true;
-            this.chkInativo.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.chkInativo.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
             this.chkInativo.Font = new System.Drawing.Font("Verdana", 9F);
             this.chkInativo.Location = new System.Drawing.Point(229, 28);
             this.chkInativo.Name = "chkInativo";
