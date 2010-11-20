@@ -204,7 +204,9 @@
     <None Include="Service References\Servico\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\DataSources\Entidades.Produto.datasource" />
     <None Include="Properties\DataSources\Entidades.Unidade.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Service References\Servico\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

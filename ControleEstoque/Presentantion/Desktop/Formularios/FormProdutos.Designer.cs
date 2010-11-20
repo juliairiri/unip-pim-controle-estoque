@@ -34,7 +34,7 @@
             this.txtDescricao = new Desktop.TextBox();
             this.chkInativo = new Desktop.CheckBox();
             this.grpUnidades = new Desktop.GroupBox();
-            this.comboBox1 = new Desktop.ComboBox();
+            this.cbUnidadeVenda = new Desktop.ComboBox();
             this.lblUnidadeVenda = new Desktop.Label();
             this.cbUnidadeCompra = new Desktop.ComboBox();
             this.lblUnidadeCompra = new Desktop.Label();
@@ -42,8 +42,8 @@
             this.lblUnidadeEstoque = new Desktop.Label();
             this.grpAlteracoes = new Desktop.GroupBox();
             this.lblDataAlteracao = new Desktop.Label();
-            this.textBox1 = new Desktop.TextBox();
-            this.textBox2 = new Desktop.TextBox();
+            this.txtDataAlteracao = new Desktop.TextBox();
+            this.txtUsuarioAlteracao = new Desktop.TextBox();
             this.lblUsuarioAlteracao = new Desktop.Label();
             this.lblDataInclusao = new Desktop.Label();
             this.txtDataInclusao = new Desktop.TextBox();
@@ -70,7 +70,8 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.EstadosExibicaoPossiveis = null;
+            this.txtCodigo.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Incluindo};
             this.txtCodigo.Font = new System.Drawing.Font("Verdana", 9F);
             this.txtCodigo.Location = new System.Drawing.Point(15, 26);
             this.txtCodigo.Name = "txtCodigo";
@@ -90,7 +91,10 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.EstadosExibicaoPossiveis = null;
+            this.txtDescricao.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
             this.txtDescricao.Font = new System.Drawing.Font("Verdana", 9F);
             this.txtDescricao.Location = new System.Drawing.Point(15, 68);
             this.txtDescricao.Name = "txtDescricao";
@@ -100,7 +104,10 @@
             // chkInativo
             // 
             this.chkInativo.AutoSize = true;
-            this.chkInativo.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.chkInativo.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
             this.chkInativo.Font = new System.Drawing.Font("Verdana", 9F);
             this.chkInativo.Location = new System.Drawing.Point(353, 30);
             this.chkInativo.Name = "chkInativo";
@@ -111,7 +118,7 @@
             // 
             // grpUnidades
             // 
-            this.grpUnidades.Controls.Add(this.comboBox1);
+            this.grpUnidades.Controls.Add(this.cbUnidadeVenda);
             this.grpUnidades.Controls.Add(this.lblUnidadeVenda);
             this.grpUnidades.Controls.Add(this.cbUnidadeCompra);
             this.grpUnidades.Controls.Add(this.lblUnidadeCompra);
@@ -125,15 +132,18 @@
             this.grpUnidades.TabStop = false;
             this.grpUnidades.Text = "Unidades";
             // 
-            // comboBox1
+            // cbUnidadeVenda
             // 
-            this.comboBox1.EstadosExibicaoPossiveis = new EstadoExibicao[0];
-            this.comboBox1.Font = new System.Drawing.Font("Verdana", 9F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(9, 127);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(411, 22);
-            this.comboBox1.TabIndex = 5;
+            this.cbUnidadeVenda.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
+            this.cbUnidadeVenda.Font = new System.Drawing.Font("Verdana", 9F);
+            this.cbUnidadeVenda.FormattingEnabled = true;
+            this.cbUnidadeVenda.Location = new System.Drawing.Point(9, 127);
+            this.cbUnidadeVenda.Name = "cbUnidadeVenda";
+            this.cbUnidadeVenda.Size = new System.Drawing.Size(411, 22);
+            this.cbUnidadeVenda.TabIndex = 5;
             // 
             // lblUnidadeVenda
             // 
@@ -148,7 +158,10 @@
             // 
             // cbUnidadeCompra
             // 
-            this.cbUnidadeCompra.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.cbUnidadeCompra.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
             this.cbUnidadeCompra.Font = new System.Drawing.Font("Verdana", 9F);
             this.cbUnidadeCompra.FormattingEnabled = true;
             this.cbUnidadeCompra.Location = new System.Drawing.Point(9, 85);
@@ -169,7 +182,10 @@
             // 
             // cbUnidadeEstoque
             // 
-            this.cbUnidadeEstoque.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.cbUnidadeEstoque.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
             this.cbUnidadeEstoque.Font = new System.Drawing.Font("Verdana", 9F);
             this.cbUnidadeEstoque.FormattingEnabled = true;
             this.cbUnidadeEstoque.Location = new System.Drawing.Point(9, 43);
@@ -191,8 +207,8 @@
             // grpAlteracoes
             // 
             this.grpAlteracoes.Controls.Add(this.lblDataAlteracao);
-            this.grpAlteracoes.Controls.Add(this.textBox1);
-            this.grpAlteracoes.Controls.Add(this.textBox2);
+            this.grpAlteracoes.Controls.Add(this.txtDataAlteracao);
+            this.grpAlteracoes.Controls.Add(this.txtUsuarioAlteracao);
             this.grpAlteracoes.Controls.Add(this.lblUsuarioAlteracao);
             this.grpAlteracoes.Controls.Add(this.lblDataInclusao);
             this.grpAlteracoes.Controls.Add(this.txtDataInclusao);
@@ -217,25 +233,25 @@
             this.lblDataAlteracao.TabIndex = 16;
             this.lblDataAlteracao.Text = "Data de Alteração";
             // 
-            // textBox1
+            // txtDataAlteracao
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.EstadosExibicaoPossiveis = null;
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 9F);
-            this.textBox1.Location = new System.Drawing.Point(235, 86);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 22);
-            this.textBox1.TabIndex = 15;
+            this.txtDataAlteracao.Enabled = false;
+            this.txtDataAlteracao.EstadosExibicaoPossiveis = null;
+            this.txtDataAlteracao.Font = new System.Drawing.Font("Verdana", 9F);
+            this.txtDataAlteracao.Location = new System.Drawing.Point(235, 86);
+            this.txtDataAlteracao.Name = "txtDataAlteracao";
+            this.txtDataAlteracao.Size = new System.Drawing.Size(185, 22);
+            this.txtDataAlteracao.TabIndex = 15;
             // 
-            // textBox2
+            // txtUsuarioAlteracao
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.EstadosExibicaoPossiveis = null;
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 9F);
-            this.textBox2.Location = new System.Drawing.Point(9, 86);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(185, 22);
-            this.textBox2.TabIndex = 14;
+            this.txtUsuarioAlteracao.Enabled = false;
+            this.txtUsuarioAlteracao.EstadosExibicaoPossiveis = null;
+            this.txtUsuarioAlteracao.Font = new System.Drawing.Font("Verdana", 9F);
+            this.txtUsuarioAlteracao.Location = new System.Drawing.Point(9, 86);
+            this.txtUsuarioAlteracao.Name = "txtUsuarioAlteracao";
+            this.txtUsuarioAlteracao.Size = new System.Drawing.Size(185, 22);
+            this.txtUsuarioAlteracao.TabIndex = 14;
             // 
             // lblUsuarioAlteracao
             // 
@@ -292,7 +308,8 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.btnConsultar.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando};
             this.btnConsultar.Font = new System.Drawing.Font("Verdana", 9F);
             this.btnConsultar.Location = new System.Drawing.Point(229, 396);
             this.btnConsultar.Name = "btnConsultar";
@@ -303,7 +320,9 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.btnSalvar.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
             this.btnSalvar.Font = new System.Drawing.Font("Verdana", 9F);
             this.btnSalvar.Location = new System.Drawing.Point(122, 396);
             this.btnSalvar.Name = "btnSalvar";
@@ -311,10 +330,12 @@
             this.btnSalvar.TabIndex = 13;
             this.btnSalvar.Text = "&Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnInserir
             // 
-            this.btnInserir.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.btnInserir.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando};
             this.btnInserir.Font = new System.Drawing.Font("Verdana", 9F);
             this.btnInserir.Location = new System.Drawing.Point(15, 396);
             this.btnInserir.Name = "btnInserir";
@@ -322,10 +343,12 @@
             this.btnInserir.TabIndex = 12;
             this.btnInserir.Text = "&Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnConversoes
             // 
-            this.btnConversoes.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.btnConversoes.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando};
             this.btnConversoes.Font = new System.Drawing.Font("Verdana", 9F);
             this.btnConversoes.Location = new System.Drawing.Point(334, 396);
             this.btnConversoes.Name = "btnConversoes";
@@ -374,7 +397,7 @@
         private TextBox txtDescricao;
         private CheckBox chkInativo;
         private GroupBox grpUnidades;
-        private ComboBox comboBox1;
+        private ComboBox cbUnidadeVenda;
         private Label lblUnidadeVenda;
         private ComboBox cbUnidadeCompra;
         private Label lblUnidadeCompra;
@@ -386,8 +409,8 @@
         private TextBox txtUsuarioInclusao;
         private Label lblUsuarioInclusao;
         private Label lblDataAlteracao;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtDataAlteracao;
+        private TextBox txtUsuarioAlteracao;
         private Label lblUsuarioAlteracao;
         private Button btnConsultar;
         private Button btnSalvar;

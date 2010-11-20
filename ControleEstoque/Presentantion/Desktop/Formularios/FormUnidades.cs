@@ -19,7 +19,12 @@ namespace Desktop.Formularios
         public Unidade Entidade
         {
             get { return _entidade; }
-            set { _entidade = value; }
+            set 
+            { 
+                _entidade = value;
+                if (value == null)
+                    this.EstadoExibicaoAtual = EstadoExibicao.Desabilitado;
+            }
         }
 
         #endregion
@@ -29,6 +34,7 @@ namespace Desktop.Formularios
             InitializeComponent();
 
             this.EstadoExibicaoAtual = EstadoExibicao.Visualizando;
+            this.Entidade = null;
         }
 
         private void PreencherEntidade()
@@ -77,9 +83,6 @@ namespace Desktop.Formularios
             {
                 MessageBox.Show(ex.Message, "Unidade de Medida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
-
-
     }
 }

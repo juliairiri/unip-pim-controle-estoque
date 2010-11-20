@@ -99,31 +99,85 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="InserirUnidade">
+  <xs:element name="ObterListaUnidades">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterListaUnidadesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="usuario" nillable="true" type="q11:Unidade" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObterListaUnidadesResult" nillable="true" type="q11:ArrayOfUnidade" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="InserirUnidadeResponse">
+  <xs:element name="InserirUnidade">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="usuario" nillable="true" type="q12:Unidade" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AlterarUnidade">
+  <xs:element name="InserirUnidadeResponse">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="usuario" nillable="true" type="q13:Unidade" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AlterarUnidadeResponse">
+  <xs:element name="AlterarUnidade">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="usuario" nillable="true" type="q14:Unidade" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarUnidadeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="usuario" nillable="true" type="q15:Unidade" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterProdutoPorCodigo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObterProdutoPorCodigoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObterProdutoPorCodigoResult" nillable="true" type="q16:Produto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirProduto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="produto" nillable="true" type="q17:Produto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirProdutoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="produto" nillable="true" type="q18:Produto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarProduto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="produto" nillable="true" type="q19:Produto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarProdutoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="produto" nillable="true" type="q20:Produto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace Logica
 {
@@ -10,6 +11,11 @@ namespace Logica
         public static Entidades.Unidade ObterUnidadePorCodigo(string codigo)
         {
             return Dados.Unidade.ObterUnidadePorCodigo(codigo);
+        }
+
+        public static Entidades.Unidade[] ObterListaUnidades()
+        {
+            return Dados.Unidade.ObterListaUnidades();
         }
 
         public static void Inserir(ref Entidades.Unidade unidade)

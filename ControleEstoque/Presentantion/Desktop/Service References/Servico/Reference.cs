@@ -36,11 +36,23 @@ namespace Desktop.Servico {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/ObterUnidadePorCodigo", ReplyAction="http://tempuri.org/IServico/ObterUnidadePorCodigoResponse")]
         Entidades.Unidade ObterUnidadePorCodigo(string codigo);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/ObterListaUnidades", ReplyAction="http://tempuri.org/IServico/ObterListaUnidadesResponse")]
+        Entidades.Unidade[] ObterListaUnidades();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/InserirUnidade", ReplyAction="http://tempuri.org/IServico/InserirUnidadeResponse")]
         void InserirUnidade(ref Entidades.Unidade usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/AlterarUnidade", ReplyAction="http://tempuri.org/IServico/AlterarUnidadeResponse")]
         void AlterarUnidade(ref Entidades.Unidade usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/ObterProdutoPorCodigo", ReplyAction="http://tempuri.org/IServico/ObterProdutoPorCodigoResponse")]
+        Entidades.Produto ObterProdutoPorCodigo(string codigo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/InserirProduto", ReplyAction="http://tempuri.org/IServico/InserirProdutoResponse")]
+        void InserirProduto(ref Entidades.Produto produto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/AlterarProduto", ReplyAction="http://tempuri.org/IServico/AlterarProdutoResponse")]
+        void AlterarProduto(ref Entidades.Produto produto);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
@@ -98,12 +110,28 @@ namespace Desktop.Servico {
             return base.Channel.ObterUnidadePorCodigo(codigo);
         }
         
+        public Entidades.Unidade[] ObterListaUnidades() {
+            return base.Channel.ObterListaUnidades();
+        }
+        
         public void InserirUnidade(ref Entidades.Unidade usuario) {
             base.Channel.InserirUnidade(ref usuario);
         }
         
         public void AlterarUnidade(ref Entidades.Unidade usuario) {
             base.Channel.AlterarUnidade(ref usuario);
+        }
+        
+        public Entidades.Produto ObterProdutoPorCodigo(string codigo) {
+            return base.Channel.ObterProdutoPorCodigo(codigo);
+        }
+        
+        public void InserirProduto(ref Entidades.Produto produto) {
+            base.Channel.InserirProduto(ref produto);
+        }
+        
+        public void AlterarProduto(ref Entidades.Produto produto) {
+            base.Channel.AlterarProduto(ref produto);
         }
     }
 }

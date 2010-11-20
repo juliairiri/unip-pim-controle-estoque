@@ -12,6 +12,7 @@ namespace Dados
     public static class Unidade
     {
         static IDbCommand s_comandoObterUnidadePorCodigo;
+        static IDbCommand s_comandoObterListaUnidades;
         static IDbCommand s_comandoInserir;
         static IDbCommand s_comandoAlterar;
 
@@ -61,6 +62,50 @@ namespace Dados
             }
 
             return unidade;
+        }
+
+        public static Entidades.Unidade[] ObterListaUnidades()
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            List<Entidades.Unidade> unidades = new List<Entidades.Unidade>();
+
+            if (s_comandoObterListaUnidades == null)
+            {
+                s_comandoObterListaUnidades = Conexao.ObterConexao().CreateCommand();
+
+                s_comandoObterListaUnidades.CommandText = "SELECT * FROM Unidades ORDER BY Codigo ";
+                s_comandoObterListaUnidades.CommandType = CommandType.Text;
+                s_comandoObterListaUnidades.Prepare();
+            }
+            else
+            {
+                if (s_comandoObterListaUnidades.Connection.State != ConnectionState.Open)
+                    s_comandoObterListaUnidades.Connection.Open();
+            }
+
+            try
+            {
+                IDataReader reader = s_comandoObterListaUnidades.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Entidades.Unidade unidade = new Entidades.Unidade();
+                    PreencherEntidade(ref unidade, reader);
+
+                    unidades.Add(unidade);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+            finally
+            {
+                s_comandoObterListaUnidades.Connection.Close();
+            }
+
+            return unidades.ToArray();
         }
 
         public static void Inserir(ref Entidades.Unidade unidade)

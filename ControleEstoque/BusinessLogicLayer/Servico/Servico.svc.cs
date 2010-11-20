@@ -7,6 +7,7 @@ using System.Text;
 
 using Entidades;
 using Logica;
+using System.Data;
 
 namespace Servico
 {
@@ -53,6 +54,11 @@ namespace Servico
             return Logica.Unidade.ObterUnidadePorCodigo(codigo);
         }
 
+        public Entidades.Unidade[] ObterListaUnidades()
+        {
+            return Logica.Unidade.ObterListaUnidades();
+        }
+
         public void InserirUnidade(ref Entidades.Unidade unidade)
         {
             Logica.Unidade.Inserir(ref unidade);
@@ -61,6 +67,25 @@ namespace Servico
         public void AlterarUnidade(ref Entidades.Unidade unidade)
         {
             Logica.Unidade.Alterar(ref unidade);
+        }
+
+        #endregion
+
+        #region Operações do Produto
+
+        public Entidades.Produto ObterProdutoPorCodigo(string codigo)
+        {
+            return Logica.Produto.ObterProdutoPorCodigo(codigo);
+        }
+
+        public void InserirProduto(ref Entidades.Produto produto)
+        {
+            Logica.Produto.Inserir(ref produto);
+        }
+
+        public void AlterarProduto(ref Entidades.Produto produto)
+        {
+            Logica.Produto.Alterar(ref produto);
         }
 
         #endregion

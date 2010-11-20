@@ -3,5 +3,6 @@ public enum EstadoExibicao
 {
     Visualizando,
     Incluindo,
-    Alterando
+    Alterando,
+    Desabilitado
 }

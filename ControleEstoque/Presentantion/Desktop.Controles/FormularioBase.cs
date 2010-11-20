@@ -33,6 +33,17 @@ namespace Desktop.Controles
         {
             foreach (Control controle in this.Controls)
             {
+                if (this.EstadoExibicaoAtual == EstadoExibicao.Desabilitado && !(controle is Button))
+                {
+                    controle.Enabled = false;
+                    continue;
+                }
+                else if (this.EstadoExibicaoAtual == EstadoExibicao.Desabilitado && controle is Button)
+                {
+                    controle.Enabled = true;
+                    continue;
+                }
+
                 if (controle is Desktop.Button)
                 {
                     Desktop.Button botao = controle as Desktop.Button;
@@ -106,7 +117,7 @@ namespace Desktop.Controles
                 else if (c is CheckBox)
                     (c as CheckBox).Checked = false;
                 else if (c is ComboBox)
-                    (c as ComboBox).Items.Clear();
+                    (c as ComboBox).SelectedIndex = -1;
             }
         }
     }

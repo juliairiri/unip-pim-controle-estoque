@@ -6,7 +6,8 @@ using System.ServiceModel;
 using System.Text;
 
 using Dados;
-using Entidades;  
+using Entidades;
+using System.Data;  
 
 namespace Servico
 {
@@ -41,10 +42,26 @@ namespace Servico
         Entidades.Unidade ObterUnidadePorCodigo(string codigo);
 
         [OperationContract]
+        Entidades.Unidade[] ObterListaUnidades();
+
+        [OperationContract]
         void InserirUnidade(ref Entidades.Unidade usuario);
 
         [OperationContract]
         void AlterarUnidade(ref Entidades.Unidade usuario);
+
+        #endregion
+
+        #region Operações com o Produto
+
+        [OperationContract]
+        Entidades.Produto ObterProdutoPorCodigo(string codigo);
+
+        [OperationContract]
+        void InserirProduto(ref Entidades.Produto produto);
+
+        [OperationContract]
+        void AlterarProduto(ref Entidades.Produto produto);
 
         #endregion
     }
