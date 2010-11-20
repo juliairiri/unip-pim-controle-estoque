@@ -17,4 +17,25 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Unidade" nillable="true" type="tns:Unidade" />
+  <xs:complexType name="ArrayOfUnidade">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Unidade" nillable="true" type="tns:Unidade" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUnidade" nillable="true" type="tns:ArrayOfUnidade" />
+  <xs:complexType name="Produto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataAlteracao" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataInclusao" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Inativo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UnidadeCompra" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnidadeEstoque" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnidadeVenda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioAlteracao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioInclusao" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Produto" nillable="true" type="tns:Produto" />
 </xs:schema>

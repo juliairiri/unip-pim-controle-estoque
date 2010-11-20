@@ -372,6 +372,44 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IServico_ObterListaUnidades_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IServico_ObterListaUnidades_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IServico_InserirUnidade_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -448,6 +486,120 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IServico_ObterProdutoPorCodigo_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IServico_ObterProdutoPorCodigo_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IServico_InserirProduto_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IServico_InserirProduto_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IServico_AlterarProduto_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IServico_AlterarProduto_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:2664/Servico.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -497,6 +649,12 @@
   <wsdl:message name="IServico_ObterUnidadePorCodigo_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObterUnidadePorCodigoResponse" />
   </wsdl:message>
+  <wsdl:message name="IServico_ObterListaUnidades_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterListaUnidades" />
+  </wsdl:message>
+  <wsdl:message name="IServico_ObterListaUnidades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterListaUnidadesResponse" />
+  </wsdl:message>
   <wsdl:message name="IServico_InserirUnidade_InputMessage">
     <wsdl:part name="parameters" element="tns:InserirUnidade" />
   </wsdl:message>
@@ -508,6 +666,24 @@
   </wsdl:message>
   <wsdl:message name="IServico_AlterarUnidade_OutputMessage">
     <wsdl:part name="parameters" element="tns:AlterarUnidadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServico_ObterProdutoPorCodigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterProdutoPorCodigo" />
+  </wsdl:message>
+  <wsdl:message name="IServico_ObterProdutoPorCodigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterProdutoPorCodigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServico_InserirProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirProduto" />
+  </wsdl:message>
+  <wsdl:message name="IServico_InserirProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServico_AlterarProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarProduto" />
+  </wsdl:message>
+  <wsdl:message name="IServico_AlterarProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarProdutoResponse" />
   </wsdl:message>
   <wsdl:portType name="IServico">
     <wsdl:operation name="ObterUsuarioPorCodigo">
@@ -538,6 +714,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServico/ObterUnidadePorCodigo" message="tns:IServico_ObterUnidadePorCodigo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServico/ObterUnidadePorCodigoResponse" message="tns:IServico_ObterUnidadePorCodigo_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ObterListaUnidades">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServico/ObterListaUnidades" message="tns:IServico_ObterListaUnidades_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServico/ObterListaUnidadesResponse" message="tns:IServico_ObterListaUnidades_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="InserirUnidade">
       <wsdl:input wsaw:Action="http://tempuri.org/IServico/InserirUnidade" message="tns:IServico_InserirUnidade_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServico/InserirUnidadeResponse" message="tns:IServico_InserirUnidade_OutputMessage" />
@@ -545,6 +725,18 @@
     <wsdl:operation name="AlterarUnidade">
       <wsdl:input wsaw:Action="http://tempuri.org/IServico/AlterarUnidade" message="tns:IServico_AlterarUnidade_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServico/AlterarUnidadeResponse" message="tns:IServico_AlterarUnidade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterProdutoPorCodigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServico/ObterProdutoPorCodigo" message="tns:IServico_ObterProdutoPorCodigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServico/ObterProdutoPorCodigoResponse" message="tns:IServico_ObterProdutoPorCodigo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServico/InserirProduto" message="tns:IServico_InserirProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServico/InserirProdutoResponse" message="tns:IServico_InserirProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServico/AlterarProduto" message="tns:IServico_AlterarProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServico/AlterarProdutoResponse" message="tns:IServico_AlterarProduto_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IServico" type="tns:IServico">
@@ -627,6 +819,17 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ObterListaUnidades">
+      <soap12:operation soapAction="http://tempuri.org/IServico/ObterListaUnidades" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IServico_ObterListaUnidades_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IServico_ObterListaUnidades_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InserirUnidade">
       <soap12:operation soapAction="http://tempuri.org/IServico/InserirUnidade" style="document" />
       <wsdl:input>
@@ -646,6 +849,39 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IServico_AlterarUnidade_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterProdutoPorCodigo">
+      <soap12:operation soapAction="http://tempuri.org/IServico/ObterProdutoPorCodigo" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IServico_ObterProdutoPorCodigo_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IServico_ObterProdutoPorCodigo_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirProduto">
+      <soap12:operation soapAction="http://tempuri.org/IServico/InserirProduto" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IServico_InserirProduto_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IServico_InserirProduto_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarProduto">
+      <soap12:operation soapAction="http://tempuri.org/IServico/AlterarProduto" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IServico_AlterarProduto_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IServico_AlterarProduto_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

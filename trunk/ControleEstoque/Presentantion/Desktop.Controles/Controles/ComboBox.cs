@@ -21,12 +21,32 @@ namespace Desktop
 
         protected override void OnSelectedIndexChanged(System.EventArgs e)
         {
-            FormularioBase formulario = this.Parent as FormularioBase;
+            FormularioBase formulario = this.ObterFormularioBase();
 
-            if (formulario.EstadoExibicaoAtual == EstadoExibicao.Visualizando)
-                formulario.EstadoExibicaoAtual = EstadoExibicao.Alterando;
+            if (formulario != null)
+                if (formulario.EstadoExibicaoAtual == EstadoExibicao.Visualizando)
+                    formulario.EstadoExibicaoAtual = EstadoExibicao.Alterando;
 
             base.OnSelectedIndexChanged(e);
+        }
+
+        private FormularioBase ObterFormularioBase()
+        {
+            System.Windows.Forms.Control controle = this.Parent as System.Windows.Forms.Control;
+            FormularioBase formulario = null;
+
+            while (controle != null)
+            {
+                if (controle is FormularioBase)
+                {
+                    formulario = controle as FormularioBase;
+                    break;
+                }
+
+                controle = controle.Parent as System.Windows.Forms.Control;
+            }
+
+            return formulario;
         }
     }
 }
