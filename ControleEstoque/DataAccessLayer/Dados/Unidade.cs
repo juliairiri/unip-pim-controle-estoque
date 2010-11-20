@@ -15,7 +15,7 @@ namespace Dados
         static IDbCommand s_comandoInserir;
         static IDbCommand s_comandoAlterar;
 
-        public static Entidades.Unidade ObterUsuarioPorCodigo(string codigo)
+        public static Entidades.Unidade ObterUnidadePorCodigo(string codigo)
         {
             Entidades.Unidade unidade = null;
             IDataReader dados;
@@ -101,7 +101,7 @@ namespace Dados
             {
                 s_comandoAlterar = Conexao.ObterConexao().CreateCommand();
 
-                s_comandoAlterar.CommandText = "UPDATE UNIDADES SET DESCRICAO = @descricao, INATIVO = @ativo WHERE CODIGO = @codigo";
+                s_comandoAlterar.CommandText = "UPDATE UNIDADES SET DESCRICAO = @descricao, INATIVO = @inativo WHERE CODIGO = @codigo";
                 s_comandoAlterar.CommandType = CommandType.Text;
                 s_comandoAlterar.Prepare();
             }

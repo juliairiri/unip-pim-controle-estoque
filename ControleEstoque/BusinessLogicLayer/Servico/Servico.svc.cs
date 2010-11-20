@@ -45,5 +45,24 @@ namespace Servico
         }
 
         #endregion
+
+        #region Operações da Unidade de Medida
+
+        public Entidades.Unidade ObterUnidadePorCodigo(string codigo)
+        {
+            return Logica.Unidade.ObterUnidadePorCodigo(codigo);
+        }
+
+        public void InserirUnidade(ref Entidades.Unidade unidade)
+        {
+            Logica.Unidade.Inserir(ref unidade);
+        }
+
+        public void AlterarUnidade(ref Entidades.Unidade unidade)
+        {
+            Logica.Unidade.Alterar(ref unidade);
+        }
+
+        #endregion
     }
 }
