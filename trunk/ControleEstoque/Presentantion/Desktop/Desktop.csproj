@@ -204,6 +204,7 @@
     <None Include="Service References\Servico\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\DataSources\Entidades.LocalEstoque.datasource" />
     <None Include="Properties\DataSources\Entidades.Produto.datasource" />
     <None Include="Properties\DataSources\Entidades.Unidade.datasource" />
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />

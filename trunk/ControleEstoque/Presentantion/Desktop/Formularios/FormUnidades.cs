@@ -81,7 +81,7 @@ namespace Desktop.Formularios
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Unidade de Medida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Unidade de Peso e Medida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

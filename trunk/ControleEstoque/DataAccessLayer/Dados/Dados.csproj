@@ -51,15 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cliente.cs" />
     <Compile Include="Conexao.cs" />
-    <Compile Include="Produto.cs" />
+    <Compile Include="Produto\Conversao.cs" />
+    <Compile Include="LocalEstoque.cs" />
+    <Compile Include="Produto\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Unidade.cs" />
+    <Compile Include="Produto\Unidade.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +80,9 @@
       <Project>{E20F307A-FFE7-46E6-9689-F81692526039}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ClienteFornecedor\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

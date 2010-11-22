@@ -36,7 +36,7 @@ namespace Servico
 
         #endregion
 
-        #region Operações com a Unidade de Medida
+        #region Operações com a Unidade de Pesos e Medidas
 
         [OperationContract]
         Entidades.Unidade ObterUnidadePorCodigo(string codigo);
@@ -62,6 +62,19 @@ namespace Servico
 
         [OperationContract]
         void AlterarProduto(ref Entidades.Produto produto);
+
+        #endregion
+
+        #region Operações com Local de Estoque
+
+        [OperationContract]
+        Entidades.LocalEstoque ObterLocalEstoquePorCodigo(string codigo);
+
+        [OperationContract]
+        void InserirLocalEstoque(ref Entidades.LocalEstoque local);
+
+        [OperationContract]
+        void AlterarLocalEstoque(ref Entidades.LocalEstoque local);
 
         #endregion
     }

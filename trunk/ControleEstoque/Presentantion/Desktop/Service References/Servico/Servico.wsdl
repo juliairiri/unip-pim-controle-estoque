@@ -600,6 +600,120 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IServico_ObterLocalEstoquePorCodigo_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IServico_ObterLocalEstoquePorCodigo_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IServico_InserirLocalEstoque_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IServico_InserirLocalEstoque_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IServico_AlterarLocalEstoque_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IServico_AlterarLocalEstoque_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:2664/Servico.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -685,6 +799,24 @@
   <wsdl:message name="IServico_AlterarProduto_OutputMessage">
     <wsdl:part name="parameters" element="tns:AlterarProdutoResponse" />
   </wsdl:message>
+  <wsdl:message name="IServico_ObterLocalEstoquePorCodigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObterLocalEstoquePorCodigo" />
+  </wsdl:message>
+  <wsdl:message name="IServico_ObterLocalEstoquePorCodigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObterLocalEstoquePorCodigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServico_InserirLocalEstoque_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirLocalEstoque" />
+  </wsdl:message>
+  <wsdl:message name="IServico_InserirLocalEstoque_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirLocalEstoqueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServico_AlterarLocalEstoque_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarLocalEstoque" />
+  </wsdl:message>
+  <wsdl:message name="IServico_AlterarLocalEstoque_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarLocalEstoqueResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServico">
     <wsdl:operation name="ObterUsuarioPorCodigo">
       <wsdl:input wsaw:Action="http://tempuri.org/IServico/ObterUsuarioPorCodigo" message="tns:IServico_ObterUsuarioPorCodigo_InputMessage" />
@@ -737,6 +869,18 @@
     <wsdl:operation name="AlterarProduto">
       <wsdl:input wsaw:Action="http://tempuri.org/IServico/AlterarProduto" message="tns:IServico_AlterarProduto_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServico/AlterarProdutoResponse" message="tns:IServico_AlterarProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterLocalEstoquePorCodigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServico/ObterLocalEstoquePorCodigo" message="tns:IServico_ObterLocalEstoquePorCodigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServico/ObterLocalEstoquePorCodigoResponse" message="tns:IServico_ObterLocalEstoquePorCodigo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirLocalEstoque">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServico/InserirLocalEstoque" message="tns:IServico_InserirLocalEstoque_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServico/InserirLocalEstoqueResponse" message="tns:IServico_InserirLocalEstoque_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarLocalEstoque">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServico/AlterarLocalEstoque" message="tns:IServico_AlterarLocalEstoque_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServico/AlterarLocalEstoqueResponse" message="tns:IServico_AlterarLocalEstoque_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IServico" type="tns:IServico">
@@ -882,6 +1026,39 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IServico_AlterarProduto_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterLocalEstoquePorCodigo">
+      <soap12:operation soapAction="http://tempuri.org/IServico/ObterLocalEstoquePorCodigo" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IServico_ObterLocalEstoquePorCodigo_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IServico_ObterLocalEstoquePorCodigo_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirLocalEstoque">
+      <soap12:operation soapAction="http://tempuri.org/IServico/InserirLocalEstoque" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IServico_InserirLocalEstoque_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IServico_InserirLocalEstoque_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarLocalEstoque">
+      <soap12:operation soapAction="http://tempuri.org/IServico/AlterarLocalEstoque" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IServico_AlterarLocalEstoque_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IServico_AlterarLocalEstoque_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

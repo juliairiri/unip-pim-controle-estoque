@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Entidades;
-using Dados;
+using Utilidades;
 
 namespace Logica
 {
@@ -68,6 +67,7 @@ namespace Logica
             }
             catch (Exception ex)
             {
+                Log.ToFile("Usuario.log", ex.Message + Environment.NewLine + ex.StackTrace);
                 throw new Exception("Não foi possível realizar alterar a Senha do Usuário");
             }
 
@@ -93,6 +93,7 @@ namespace Logica
             }
             catch (Exception ex)
             {
+                Log.ToFile("Usuario.log", ex.Message + Environment.NewLine + ex.StackTrace);
                 throw new Exception("Não foi possível realizar a Inclusão do Usuário");
             }
         }
@@ -111,6 +112,7 @@ namespace Logica
             }
             catch (Exception ex)
             {
+                Log.ToFile("Usuario.log", ex.Message + Environment.NewLine + ex.StackTrace);
                 throw new Exception("Não foi possível realizar a Alteração do Usuário");
             }
         }
@@ -126,6 +128,7 @@ namespace Logica
             }
             catch (Exception ex)
             {
+                Log.ToFile("Usuario.log", ex.Message + Environment.NewLine + ex.StackTrace);
                 throw new Exception("Não foi possível realizar a Exclusão do Usuário");
             }
         }
