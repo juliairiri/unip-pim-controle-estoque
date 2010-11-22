@@ -38,4 +38,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Produto" nillable="true" type="tns:Produto" />
+  <xs:complexType name="LocalEstoque">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Inativo" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocalEstoque" nillable="true" type="tns:LocalEstoque" />
 </xs:schema>

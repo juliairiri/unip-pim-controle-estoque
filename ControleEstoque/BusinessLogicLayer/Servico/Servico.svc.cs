@@ -47,7 +47,7 @@ namespace Servico
 
         #endregion
 
-        #region Operações da Unidade de Medida
+        #region Operações da Unidade de Pesos e Medidas
 
         public Entidades.Unidade ObterUnidadePorCodigo(string codigo)
         {
@@ -86,6 +86,25 @@ namespace Servico
         public void AlterarProduto(ref Entidades.Produto produto)
         {
             Logica.Produto.Alterar(ref produto);
+        }
+
+        #endregion
+
+        #region Operações com Local de Estoque
+
+        public Entidades.LocalEstoque ObterLocalEstoquePorCodigo(string codigo)
+        {
+            return Logica.LocalEstoque.ObterLocalEstoquePorCodigo(codigo);
+        }
+
+        public void InserirLocalEstoque(ref Entidades.LocalEstoque local)
+        {
+            Logica.LocalEstoque.Inserir(ref local);
+        }
+
+        public void AlterarLocalEstoque(ref Entidades.LocalEstoque local)
+        {
+            Logica.LocalEstoque.Alterar(ref local);
         }
 
         #endregion
