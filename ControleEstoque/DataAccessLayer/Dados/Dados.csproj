@@ -51,8 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cliente.cs" />
+    <Compile Include="ClienteFornecedor\Cliente.cs" />
     <Compile Include="Conexao.cs" />
+    <Compile Include="ClienteFornecedor\Fornecedor.cs" />
     <Compile Include="Produto\Conversao.cs" />
     <Compile Include="LocalEstoque.cs" />
     <Compile Include="Produto\Produto.cs" />
@@ -80,9 +81,6 @@
       <Project>{E20F307A-FFE7-46E6-9689-F81692526039}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ClienteFornecedor\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

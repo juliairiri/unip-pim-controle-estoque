@@ -71,13 +71,6 @@ namespace Desktop.Formularios
             this.txtNome.Text = this.Entidade.Nome;
         }
 
-        private void LimparFormulario()
-        {
-            this.txtCodigo.Text = string.Empty;
-            this.chkAtivo.Checked = false;
-            this.txtNome.Text = string.Empty;
-        }
-
         #endregion
 
         #region Eventos
