@@ -92,6 +92,14 @@ namespace Entidades
             set { _estado = value; }
         }
 
+        private string _cep;
+        [DataMember]
+        public string Cep
+        {
+            get { return _cep; }
+            set { _cep = value; }
+        }
+
         private bool _inativo;
         [DataMember]
         public bool Inativo

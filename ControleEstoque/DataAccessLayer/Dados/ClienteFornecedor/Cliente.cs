@@ -65,8 +65,8 @@ namespace Dados
             {
                 s_comandoInserir = Conexao.ObterConexao().CreateCommand();
 
-                s_comandoInserir.CommandText = @"INSERT INTO Clientes (Tipo, Nome, RazaoSocial, Cpf, Cnpj, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, Inativo) 
-                                                 VALUES (@tipo, @nome, @razaoSocial, @cpf, @cnpj, @logradouro, @numero, @complemento, @bairro, @cidade, @estado, @inativo)";
+                s_comandoInserir.CommandText = @"INSERT INTO Clientes (Tipo, Nome, RazaoSocial, Cpf, Cnpj, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, Cep, Inativo) 
+                                                 VALUES (@tipo, @nome, @razaoSocial, @cpf, @cnpj, @logradouro, @numero, @complemento, @bairro, @cidade, @estado, @cep, @inativo)";
                 s_comandoInserir.CommandType = CommandType.Text;
                 s_comandoInserir.Prepare();
             }
@@ -111,6 +111,7 @@ namespace Dados
                                                      Bairro = @bairro, 
                                                      Cidade = @cidade, 
                                                      Estado = @estado, 
+                                                     Cep = @cep,
                                                      Inativo = @inativo
                                                  WHERE Codigo = @codigo";
 
@@ -231,6 +232,13 @@ namespace Dados
             parametro.DbType = DbType.String;
             parametro.Size = 2;
             parametro.Value = cliente.Estado;
+            comando.Parameters.Add(parametro);
+
+            parametro = comando.CreateParameter();
+            parametro.ParameterName = "@cep";
+            parametro.DbType = DbType.String;
+            parametro.Size = 8;
+            parametro.Value = cliente.Cep;
             comando.Parameters.Add(parametro);
 
             parametro = comando.CreateParameter();
