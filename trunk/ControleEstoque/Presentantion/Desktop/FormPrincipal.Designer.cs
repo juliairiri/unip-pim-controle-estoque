@@ -31,13 +31,16 @@
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.mnCadastros = new System.Windows.Forms.ToolStripMenuItem();
             this.mnUsuarios = new System.Windows.Forms.ToolStripMenuItem();
-            this.módulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnSair = new System.Windows.Forms.ToolStripMenuItem();
             this.mnCadastrosProdutos = new System.Windows.Forms.ToolStripMenuItem();
             this.mnProdutos = new System.Windows.Forms.ToolStripMenuItem();
             this.mnMedidas = new System.Windows.Forms.ToolStripMenuItem();
             this.mnEstoque = new System.Windows.Forms.ToolStripMenuItem();
             this.mnLocaisEstoque = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnClientesFornecedores = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnClientes = new System.Windows.Forms.ToolStripMenuItem();
+            this.fornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.módulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnSair = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +62,8 @@
             this.mnCadastros.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnUsuarios,
             this.mnCadastrosProdutos,
-            this.mnEstoque});
+            this.mnEstoque,
+            this.mnClientesFornecedores});
             this.mnCadastros.Name = "mnCadastros";
             this.mnCadastros.Size = new System.Drawing.Size(77, 20);
             this.mnCadastros.Text = "Cadastros";
@@ -67,22 +71,9 @@
             // mnUsuarios
             // 
             this.mnUsuarios.Name = "mnUsuarios";
-            this.mnUsuarios.Size = new System.Drawing.Size(152, 22);
+            this.mnUsuarios.Size = new System.Drawing.Size(212, 22);
             this.mnUsuarios.Text = "Usuários";
             this.mnUsuarios.Click += new System.EventHandler(this.mnUsuarios_Click);
-            // 
-            // módulosToolStripMenuItem
-            // 
-            this.módulosToolStripMenuItem.Name = "módulosToolStripMenuItem";
-            this.módulosToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.módulosToolStripMenuItem.Text = "Módulos";
-            // 
-            // mnSair
-            // 
-            this.mnSair.Name = "mnSair";
-            this.mnSair.Size = new System.Drawing.Size(42, 20);
-            this.mnSair.Text = "Sair";
-            this.mnSair.Click += new System.EventHandler(this.mnSair_Click);
             // 
             // mnCadastrosProdutos
             // 
@@ -90,7 +81,7 @@
             this.mnProdutos,
             this.mnMedidas});
             this.mnCadastrosProdutos.Name = "mnCadastrosProdutos";
-            this.mnCadastrosProdutos.Size = new System.Drawing.Size(152, 22);
+            this.mnCadastrosProdutos.Size = new System.Drawing.Size(212, 22);
             this.mnCadastrosProdutos.Text = "Produtos";
             // 
             // mnProdutos
@@ -112,7 +103,7 @@
             this.mnEstoque.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnLocaisEstoque});
             this.mnEstoque.Name = "mnEstoque";
-            this.mnEstoque.Size = new System.Drawing.Size(152, 22);
+            this.mnEstoque.Size = new System.Drawing.Size(212, 22);
             this.mnEstoque.Text = "Estoque";
             // 
             // mnLocaisEstoque
@@ -121,6 +112,42 @@
             this.mnLocaisEstoque.Size = new System.Drawing.Size(176, 22);
             this.mnLocaisEstoque.Text = "Locais de Estoque";
             this.mnLocaisEstoque.Click += new System.EventHandler(this.mnLocaisEstoque_Click);
+            // 
+            // mnClientesFornecedores
+            // 
+            this.mnClientesFornecedores.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnClientes,
+            this.fornecedoresToolStripMenuItem});
+            this.mnClientesFornecedores.Name = "mnClientesFornecedores";
+            this.mnClientesFornecedores.Size = new System.Drawing.Size(212, 22);
+            this.mnClientesFornecedores.Text = "Clientes e Fornecedores";
+            // 
+            // mnClientes
+            // 
+            this.mnClientes.Name = "mnClientes";
+            this.mnClientes.Size = new System.Drawing.Size(152, 22);
+            this.mnClientes.Text = "Clientes";
+            this.mnClientes.Click += new System.EventHandler(this.mnClientes_Click);
+            // 
+            // fornecedoresToolStripMenuItem
+            // 
+            this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
+            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fornecedoresToolStripMenuItem.Text = "Fornecedores";
+            this.fornecedoresToolStripMenuItem.Click += new System.EventHandler(this.fornecedoresToolStripMenuItem_Click);
+            // 
+            // módulosToolStripMenuItem
+            // 
+            this.módulosToolStripMenuItem.Name = "módulosToolStripMenuItem";
+            this.módulosToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.módulosToolStripMenuItem.Text = "Módulos";
+            // 
+            // mnSair
+            // 
+            this.mnSair.Name = "mnSair";
+            this.mnSair.Size = new System.Drawing.Size(42, 20);
+            this.mnSair.Text = "Sair";
+            this.mnSair.Click += new System.EventHandler(this.mnSair_Click);
             // 
             // FormPrincipal
             // 
@@ -157,6 +184,9 @@
         private System.Windows.Forms.ToolStripMenuItem mnMedidas;
         private System.Windows.Forms.ToolStripMenuItem mnEstoque;
         private System.Windows.Forms.ToolStripMenuItem mnLocaisEstoque;
+        private System.Windows.Forms.ToolStripMenuItem mnClientesFornecedores;
+        private System.Windows.Forms.ToolStripMenuItem mnClientes;
+        private System.Windows.Forms.ToolStripMenuItem fornecedoresToolStripMenuItem;
 
     }
 }

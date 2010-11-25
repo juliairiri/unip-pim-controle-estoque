@@ -45,7 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteFornecedor\Cliente.cs" />
     <Compile Include="Contexto.cs" />
+    <Compile Include="ClienteFornecedor\Fornecedor.cs" />
     <Compile Include="LocalEstoque.cs" />
     <Compile Include="Produto\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

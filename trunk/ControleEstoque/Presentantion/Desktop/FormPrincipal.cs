@@ -71,5 +71,19 @@ namespace Desktop
             locais.MdiParent = this;
             locais.Show();
         }
+
+        private void mnClientes_Click(object sender, EventArgs e)
+        {
+            FormClientes clientes = new FormClientes();
+            clientes.MdiParent = this;
+            clientes.Show();
+        }
+
+        private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormFornecedores fornecedores = new FormFornecedores();
+            fornecedores.MdiParent = this;
+            fornecedores.Show();
+        }
     }
 }

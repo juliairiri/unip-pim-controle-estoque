@@ -66,7 +66,7 @@ namespace Dados
                 s_comandoInserir = Conexao.ObterConexao().CreateCommand();
 
                 s_comandoInserir.CommandText = @"INSERT INTO Clientes (Tipo, Nome, RazaoSocial, Cpf, Cnpj, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, Cep, Inativo) 
-                                                 VALUES (@tipo, @nome, @razaoSocial, @cpf, @cnpj, @logradouro, @numero, @complemento, @bairro, @cidade, @estado, @cep, @inativo)";
+                                                 VALUES (@tipo, @nome, @razaoSocial, @cpf, @cnpj, @logradouro, @numero, @complemento, @bairro, @cidade, @estado, @cep, @inativo); SELECT IDENT_CURRENT('Clientes')";
                 s_comandoInserir.CommandType = CommandType.Text;
                 s_comandoInserir.Prepare();
             }
@@ -80,7 +80,14 @@ namespace Dados
 
             try
             {
-                s_comandoInserir.ExecuteNonQuery();
+                object retorno = s_comandoInserir.ExecuteScalar();
+                long codigo;
+
+                if (!long.TryParse(retorno.ToString(), out codigo))
+                    codigo = 0;
+
+                cliente.Codigo = codigo;
+
             }
             catch (Exception ex)
             {
@@ -160,7 +167,7 @@ namespace Dados
 
             parametro = comando.CreateParameter();
             parametro.ParameterName = "@tipo";
-            parametro.DbType = DbType.SByte;
+            parametro.DbType = DbType.Int16;
             parametro.Value = cliente.Tipo;
             comando.Parameters.Add(parametro);
 

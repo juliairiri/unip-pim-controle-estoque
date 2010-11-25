@@ -108,5 +108,43 @@ namespace Servico
         }
 
         #endregion
+
+        #region Operações com Cliente
+
+        public Entidades.Cliente ObterClientePorCodigo(long codigo)
+        {
+            return Logica.Cliente.ObterClientePorCodigo(codigo);
+        }
+
+        public void InserirCliente(ref Entidades.Cliente local)
+        {
+            Logica.Cliente.Inserir(ref local);
+        }
+
+        public void AlterarCliente(ref Entidades.Cliente local)
+        {
+            Logica.Cliente.Alterar(ref local);
+        }
+
+        #endregion
+
+        #region Operações com Fornecedor
+
+        public Entidades.Fornecedor ObterFornecedorPorCodigo(long codigo)
+        {
+            return Logica.Fornecedor.ObterFornecedorPorCodigo(codigo);
+        }
+
+        public void InserirFornecedor(ref Entidades.Fornecedor local)
+        {
+            Logica.Fornecedor.Inserir(ref local);
+        }
+
+        public void AlterarFornecedor(ref Entidades.Fornecedor local)
+        {
+            Logica.Fornecedor.Alterar(ref local);
+        }
+
+        #endregion
     }
 }
