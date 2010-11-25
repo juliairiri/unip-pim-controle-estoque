@@ -39,8 +39,10 @@
             this.mnClientesFornecedores = new System.Windows.Forms.ToolStripMenuItem();
             this.mnClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.módulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnModulos = new System.Windows.Forms.ToolStripMenuItem();
             this.mnSair = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnPedidoCompra = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnPedidoVenda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@
             this.menuPrincipal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnCadastros,
-            this.módulosToolStripMenuItem,
+            this.mnModulos,
             this.mnSair});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
@@ -125,22 +127,25 @@
             // mnClientes
             // 
             this.mnClientes.Name = "mnClientes";
-            this.mnClientes.Size = new System.Drawing.Size(152, 22);
+            this.mnClientes.Size = new System.Drawing.Size(151, 22);
             this.mnClientes.Text = "Clientes";
             this.mnClientes.Click += new System.EventHandler(this.mnClientes_Click);
             // 
             // fornecedoresToolStripMenuItem
             // 
             this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.fornecedoresToolStripMenuItem.Text = "Fornecedores";
             this.fornecedoresToolStripMenuItem.Click += new System.EventHandler(this.fornecedoresToolStripMenuItem_Click);
             // 
-            // módulosToolStripMenuItem
+            // mnModulos
             // 
-            this.módulosToolStripMenuItem.Name = "módulosToolStripMenuItem";
-            this.módulosToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.módulosToolStripMenuItem.Text = "Módulos";
+            this.mnModulos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnPedidoCompra,
+            this.mnPedidoVenda});
+            this.mnModulos.Name = "mnModulos";
+            this.mnModulos.Size = new System.Drawing.Size(65, 20);
+            this.mnModulos.Text = "Módulos";
             // 
             // mnSair
             // 
@@ -148,6 +153,18 @@
             this.mnSair.Size = new System.Drawing.Size(42, 20);
             this.mnSair.Text = "Sair";
             this.mnSair.Click += new System.EventHandler(this.mnSair_Click);
+            // 
+            // mnPedidoCompra
+            // 
+            this.mnPedidoCompra.Name = "mnPedidoCompra";
+            this.mnPedidoCompra.Size = new System.Drawing.Size(180, 22);
+            this.mnPedidoCompra.Text = "Pedido de Compra";
+            // 
+            // mnPedidoVenda
+            // 
+            this.mnPedidoVenda.Name = "mnPedidoVenda";
+            this.mnPedidoVenda.Size = new System.Drawing.Size(180, 22);
+            this.mnPedidoVenda.Text = "Pedido de Venda";
             // 
             // FormPrincipal
             // 
@@ -176,7 +193,7 @@
 
         private System.Windows.Forms.MenuStrip menuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem mnCadastros;
-        private System.Windows.Forms.ToolStripMenuItem módulosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnModulos;
         private System.Windows.Forms.ToolStripMenuItem mnSair;
         private System.Windows.Forms.ToolStripMenuItem mnUsuarios;
         private System.Windows.Forms.ToolStripMenuItem mnCadastrosProdutos;
@@ -187,6 +204,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnClientesFornecedores;
         private System.Windows.Forms.ToolStripMenuItem mnClientes;
         private System.Windows.Forms.ToolStripMenuItem fornecedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnPedidoCompra;
+        private System.Windows.Forms.ToolStripMenuItem mnPedidoVenda;
 
     }
 }
