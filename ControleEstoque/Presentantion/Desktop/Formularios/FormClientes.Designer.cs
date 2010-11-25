@@ -34,8 +34,8 @@
             this.cbTipo = new Desktop.ComboBox();
             this.chkInativo = new Desktop.CheckBox();
             this.grupoDados = new Desktop.GroupBox();
-            this.txtRazaoSocial = new Desktop.Label();
-            this.textBox2 = new Desktop.TextBox();
+            this.lblRazaoSocial = new Desktop.Label();
+            this.txtRazaoSocial = new Desktop.TextBox();
             this.txtNome = new Desktop.TextBox();
             this.label1 = new Desktop.Label();
             this.txtCodigoFornecedor = new Desktop.TextBox();
@@ -46,20 +46,20 @@
             this.txtCpf = new Desktop.TextBox();
             this.lblCpf = new Desktop.Label();
             this.groupEndereço = new Desktop.GroupBox();
-            this.lblLogradouro = new Desktop.Label();
-            this.txtLogradouro = new Desktop.TextBox();
-            this.txtComplemento = new Desktop.TextBox();
-            this.txtNumero = new Desktop.TextBox();
-            this.lblNumero = new Desktop.Label();
-            this.lblComplemento = new Desktop.Label();
-            this.txtBairro = new Desktop.TextBox();
-            this.lblBairro = new Desktop.Label();
-            this.txtCidade = new Desktop.TextBox();
-            this.txtEstado = new Desktop.TextBox();
-            this.lblEstado = new Desktop.Label();
-            this.lblCidade = new Desktop.Label();
             this.lblCep = new Desktop.Label();
             this.txtCep = new Desktop.TextBox();
+            this.lblCidade = new Desktop.Label();
+            this.lblEstado = new Desktop.Label();
+            this.txtEstado = new Desktop.TextBox();
+            this.txtCidade = new Desktop.TextBox();
+            this.txtBairro = new Desktop.TextBox();
+            this.lblBairro = new Desktop.Label();
+            this.lblComplemento = new Desktop.Label();
+            this.lblNumero = new Desktop.Label();
+            this.txtNumero = new Desktop.TextBox();
+            this.txtComplemento = new Desktop.TextBox();
+            this.txtLogradouro = new Desktop.TextBox();
+            this.lblLogradouro = new Desktop.Label();
             this.btnConsultar = new Desktop.Button();
             this.btnSalvar = new Desktop.Button();
             this.btnInserir = new Desktop.Button();
@@ -81,8 +81,8 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.EstadosExibicaoPossiveis = new EstadoExibicao[] {
-        EstadoExibicao.Incluindo};
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.EstadosExibicaoPossiveis = new EstadoExibicao[0];
             this.txtCodigo.Font = new System.Drawing.Font("Verdana", 9F);
             this.txtCodigo.Location = new System.Drawing.Point(15, 26);
             this.txtCodigo.Name = "txtCodigo";
@@ -102,18 +102,25 @@
             // 
             // cbTipo
             // 
-            this.cbTipo.EstadosExibicaoPossiveis = null;
+            this.cbTipo.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
             this.cbTipo.Font = new System.Drawing.Font("Verdana", 9F);
             this.cbTipo.FormattingEnabled = true;
             this.cbTipo.Location = new System.Drawing.Point(9, 37);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(192, 22);
             this.cbTipo.TabIndex = 5;
+            this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged);
             // 
             // chkInativo
             // 
             this.chkInativo.AutoSize = true;
-            this.chkInativo.EstadosExibicaoPossiveis = null;
+            this.chkInativo.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
             this.chkInativo.Font = new System.Drawing.Font("Verdana", 9F);
             this.chkInativo.Location = new System.Drawing.Point(329, 28);
             this.chkInativo.Name = "chkInativo";
@@ -124,8 +131,8 @@
             // 
             // grupoDados
             // 
+            this.grupoDados.Controls.Add(this.lblRazaoSocial);
             this.grupoDados.Controls.Add(this.txtRazaoSocial);
-            this.grupoDados.Controls.Add(this.textBox2);
             this.grupoDados.Controls.Add(this.txtNome);
             this.grupoDados.Controls.Add(this.label1);
             this.grupoDados.Controls.Add(this.lblTipo);
@@ -138,31 +145,35 @@
             this.grupoDados.TabStop = false;
             this.grupoDados.Text = "Dados";
             // 
+            // lblRazaoSocial
+            // 
+            this.lblRazaoSocial.AutoSize = true;
+            this.lblRazaoSocial.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.lblRazaoSocial.Font = new System.Drawing.Font("Verdana", 9F);
+            this.lblRazaoSocial.Location = new System.Drawing.Point(6, 104);
+            this.lblRazaoSocial.Name = "lblRazaoSocial";
+            this.lblRazaoSocial.Size = new System.Drawing.Size(86, 14);
+            this.lblRazaoSocial.TabIndex = 12;
+            this.lblRazaoSocial.Text = "Razão Social";
+            // 
             // txtRazaoSocial
             // 
-            this.txtRazaoSocial.AutoSize = true;
-            this.txtRazaoSocial.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.txtRazaoSocial.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
             this.txtRazaoSocial.Font = new System.Drawing.Font("Verdana", 9F);
-            this.txtRazaoSocial.Location = new System.Drawing.Point(6, 104);
+            this.txtRazaoSocial.Location = new System.Drawing.Point(9, 121);
             this.txtRazaoSocial.Name = "txtRazaoSocial";
-            this.txtRazaoSocial.Size = new System.Drawing.Size(86, 14);
-            this.txtRazaoSocial.TabIndex = 12;
-            this.txtRazaoSocial.Text = "Razão Social";
-            // 
-            // textBox2
-            // 
-            this.textBox2.EstadosExibicaoPossiveis = new EstadoExibicao[] {
-        EstadoExibicao.Incluindo};
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 9F);
-            this.textBox2.Location = new System.Drawing.Point(9, 121);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(619, 22);
-            this.textBox2.TabIndex = 11;
+            this.txtRazaoSocial.Size = new System.Drawing.Size(619, 22);
+            this.txtRazaoSocial.TabIndex = 11;
             // 
             // txtNome
             // 
             this.txtNome.EstadosExibicaoPossiveis = new EstadoExibicao[] {
-        EstadoExibicao.Incluindo};
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
             this.txtNome.Font = new System.Drawing.Font("Verdana", 9F);
             this.txtNome.Location = new System.Drawing.Point(9, 79);
             this.txtNome.Name = "txtNome";
@@ -183,7 +194,9 @@
             // txtCodigoFornecedor
             // 
             this.txtCodigoFornecedor.EstadosExibicaoPossiveis = new EstadoExibicao[] {
-        EstadoExibicao.Incluindo};
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
             this.txtCodigoFornecedor.Font = new System.Drawing.Font("Verdana", 9F);
             this.txtCodigoFornecedor.Location = new System.Drawing.Point(172, 26);
             this.txtCodigoFornecedor.Name = "txtCodigoFornecedor";
@@ -229,7 +242,9 @@
             // txtCnpj
             // 
             this.txtCnpj.EstadosExibicaoPossiveis = new EstadoExibicao[] {
-        EstadoExibicao.Incluindo};
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
             this.txtCnpj.Font = new System.Drawing.Font("Verdana", 9F);
             this.txtCnpj.Location = new System.Drawing.Point(166, 39);
             this.txtCnpj.Name = "txtCnpj";
@@ -239,7 +254,9 @@
             // txtCpf
             // 
             this.txtCpf.EstadosExibicaoPossiveis = new EstadoExibicao[] {
-        EstadoExibicao.Incluindo};
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
             this.txtCpf.Font = new System.Drawing.Font("Verdana", 9F);
             this.txtCpf.Location = new System.Drawing.Point(9, 39);
             this.txtCpf.Name = "txtCpf";
@@ -281,73 +298,81 @@
             this.groupEndereço.TabStop = false;
             this.groupEndereço.Text = "Endereço";
             // 
-            // lblLogradouro
+            // lblCep
             // 
-            this.lblLogradouro.AutoSize = true;
-            this.lblLogradouro.EstadosExibicaoPossiveis = new EstadoExibicao[0];
-            this.lblLogradouro.Font = new System.Drawing.Font("Verdana", 9F);
-            this.lblLogradouro.Location = new System.Drawing.Point(6, 22);
-            this.lblLogradouro.Name = "lblLogradouro";
-            this.lblLogradouro.Size = new System.Drawing.Size(80, 14);
-            this.lblLogradouro.TabIndex = 14;
-            this.lblLogradouro.Text = "Logradouro";
+            this.lblCep.AutoSize = true;
+            this.lblCep.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.lblCep.Font = new System.Drawing.Font("Verdana", 9F);
+            this.lblCep.Location = new System.Drawing.Point(6, 106);
+            this.lblCep.Name = "lblCep";
+            this.lblCep.Size = new System.Drawing.Size(32, 14);
+            this.lblCep.TabIndex = 26;
+            this.lblCep.Text = "CEP";
             // 
-            // txtLogradouro
+            // txtCep
             // 
-            this.txtLogradouro.EstadosExibicaoPossiveis = new EstadoExibicao[] {
-        EstadoExibicao.Incluindo};
-            this.txtLogradouro.Font = new System.Drawing.Font("Verdana", 9F);
-            this.txtLogradouro.Location = new System.Drawing.Point(9, 39);
-            this.txtLogradouro.Name = "txtLogradouro";
-            this.txtLogradouro.Size = new System.Drawing.Size(305, 22);
-            this.txtLogradouro.TabIndex = 12;
+            this.txtCep.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
+            this.txtCep.Font = new System.Drawing.Font("Verdana", 9F);
+            this.txtCep.Location = new System.Drawing.Point(9, 123);
+            this.txtCep.Name = "txtCep";
+            this.txtCep.Size = new System.Drawing.Size(83, 22);
+            this.txtCep.TabIndex = 25;
             // 
-            // txtComplemento
+            // lblCidade
             // 
-            this.txtComplemento.EstadosExibicaoPossiveis = new EstadoExibicao[] {
-        EstadoExibicao.Incluindo};
-            this.txtComplemento.Font = new System.Drawing.Font("Verdana", 9F);
-            this.txtComplemento.Location = new System.Drawing.Point(477, 39);
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(151, 22);
-            this.txtComplemento.TabIndex = 15;
+            this.lblCidade.AutoSize = true;
+            this.lblCidade.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.lblCidade.Font = new System.Drawing.Font("Verdana", 9F);
+            this.lblCidade.Location = new System.Drawing.Point(317, 64);
+            this.lblCidade.Name = "lblCidade";
+            this.lblCidade.Size = new System.Drawing.Size(51, 14);
+            this.lblCidade.TabIndex = 24;
+            this.lblCidade.Text = "Cidade";
             // 
-            // txtNumero
+            // lblEstado
             // 
-            this.txtNumero.EstadosExibicaoPossiveis = new EstadoExibicao[] {
-        EstadoExibicao.Incluindo};
-            this.txtNumero.Font = new System.Drawing.Font("Verdana", 9F);
-            this.txtNumero.Location = new System.Drawing.Point(320, 39);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(151, 22);
-            this.txtNumero.TabIndex = 16;
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.lblEstado.Font = new System.Drawing.Font("Verdana", 9F);
+            this.lblEstado.Location = new System.Drawing.Point(569, 64);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(51, 14);
+            this.lblEstado.TabIndex = 23;
+            this.lblEstado.Text = "Estado";
             // 
-            // lblNumero
+            // txtEstado
             // 
-            this.lblNumero.AutoSize = true;
-            this.lblNumero.EstadosExibicaoPossiveis = new EstadoExibicao[0];
-            this.lblNumero.Font = new System.Drawing.Font("Verdana", 9F);
-            this.lblNumero.Location = new System.Drawing.Point(317, 22);
-            this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(56, 14);
-            this.lblNumero.TabIndex = 17;
-            this.lblNumero.Text = "Número";
+            this.txtEstado.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
+            this.txtEstado.Font = new System.Drawing.Font("Verdana", 9F);
+            this.txtEstado.Location = new System.Drawing.Point(572, 81);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(56, 22);
+            this.txtEstado.TabIndex = 22;
             // 
-            // lblComplemento
+            // txtCidade
             // 
-            this.lblComplemento.AutoSize = true;
-            this.lblComplemento.EstadosExibicaoPossiveis = new EstadoExibicao[0];
-            this.lblComplemento.Font = new System.Drawing.Font("Verdana", 9F);
-            this.lblComplemento.Location = new System.Drawing.Point(474, 22);
-            this.lblComplemento.Name = "lblComplemento";
-            this.lblComplemento.Size = new System.Drawing.Size(94, 14);
-            this.lblComplemento.TabIndex = 18;
-            this.lblComplemento.Text = "Complemento";
+            this.txtCidade.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
+            this.txtCidade.Font = new System.Drawing.Font("Verdana", 9F);
+            this.txtCidade.Location = new System.Drawing.Point(320, 81);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(246, 22);
+            this.txtCidade.TabIndex = 21;
             // 
             // txtBairro
             // 
             this.txtBairro.EstadosExibicaoPossiveis = new EstadoExibicao[] {
-        EstadoExibicao.Incluindo};
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
             this.txtBairro.Font = new System.Drawing.Font("Verdana", 9F);
             this.txtBairro.Location = new System.Drawing.Point(9, 81);
             this.txtBairro.Name = "txtBairro";
@@ -365,68 +390,74 @@
             this.lblBairro.TabIndex = 20;
             this.lblBairro.Text = "Bairro";
             // 
-            // txtCidade
+            // lblComplemento
             // 
-            this.txtCidade.EstadosExibicaoPossiveis = new EstadoExibicao[] {
-        EstadoExibicao.Incluindo};
-            this.txtCidade.Font = new System.Drawing.Font("Verdana", 9F);
-            this.txtCidade.Location = new System.Drawing.Point(320, 81);
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(246, 22);
-            this.txtCidade.TabIndex = 21;
+            this.lblComplemento.AutoSize = true;
+            this.lblComplemento.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.lblComplemento.Font = new System.Drawing.Font("Verdana", 9F);
+            this.lblComplemento.Location = new System.Drawing.Point(474, 22);
+            this.lblComplemento.Name = "lblComplemento";
+            this.lblComplemento.Size = new System.Drawing.Size(94, 14);
+            this.lblComplemento.TabIndex = 18;
+            this.lblComplemento.Text = "Complemento";
             // 
-            // txtEstado
+            // lblNumero
             // 
-            this.txtEstado.EstadosExibicaoPossiveis = new EstadoExibicao[] {
-        EstadoExibicao.Incluindo};
-            this.txtEstado.Font = new System.Drawing.Font("Verdana", 9F);
-            this.txtEstado.Location = new System.Drawing.Point(572, 81);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(56, 22);
-            this.txtEstado.TabIndex = 22;
+            this.lblNumero.AutoSize = true;
+            this.lblNumero.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.lblNumero.Font = new System.Drawing.Font("Verdana", 9F);
+            this.lblNumero.Location = new System.Drawing.Point(317, 22);
+            this.lblNumero.Name = "lblNumero";
+            this.lblNumero.Size = new System.Drawing.Size(56, 14);
+            this.lblNumero.TabIndex = 17;
+            this.lblNumero.Text = "Número";
             // 
-            // lblEstado
+            // txtNumero
             // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.EstadosExibicaoPossiveis = new EstadoExibicao[0];
-            this.lblEstado.Font = new System.Drawing.Font("Verdana", 9F);
-            this.lblEstado.Location = new System.Drawing.Point(569, 64);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(51, 14);
-            this.lblEstado.TabIndex = 23;
-            this.lblEstado.Text = "Estado";
+            this.txtNumero.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
+            this.txtNumero.Font = new System.Drawing.Font("Verdana", 9F);
+            this.txtNumero.Location = new System.Drawing.Point(320, 39);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(151, 22);
+            this.txtNumero.TabIndex = 16;
             // 
-            // lblCidade
+            // txtComplemento
             // 
-            this.lblCidade.AutoSize = true;
-            this.lblCidade.EstadosExibicaoPossiveis = new EstadoExibicao[0];
-            this.lblCidade.Font = new System.Drawing.Font("Verdana", 9F);
-            this.lblCidade.Location = new System.Drawing.Point(317, 64);
-            this.lblCidade.Name = "lblCidade";
-            this.lblCidade.Size = new System.Drawing.Size(51, 14);
-            this.lblCidade.TabIndex = 24;
-            this.lblCidade.Text = "Cidade";
+            this.txtComplemento.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
+            this.txtComplemento.Font = new System.Drawing.Font("Verdana", 9F);
+            this.txtComplemento.Location = new System.Drawing.Point(477, 39);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(151, 22);
+            this.txtComplemento.TabIndex = 15;
             // 
-            // lblCep
+            // txtLogradouro
             // 
-            this.lblCep.AutoSize = true;
-            this.lblCep.EstadosExibicaoPossiveis = new EstadoExibicao[0];
-            this.lblCep.Font = new System.Drawing.Font("Verdana", 9F);
-            this.lblCep.Location = new System.Drawing.Point(6, 106);
-            this.lblCep.Name = "lblCep";
-            this.lblCep.Size = new System.Drawing.Size(32, 14);
-            this.lblCep.TabIndex = 26;
-            this.lblCep.Text = "CEP";
+            this.txtLogradouro.EstadosExibicaoPossiveis = new EstadoExibicao[] {
+        EstadoExibicao.Visualizando,
+        EstadoExibicao.Incluindo,
+        EstadoExibicao.Alterando};
+            this.txtLogradouro.Font = new System.Drawing.Font("Verdana", 9F);
+            this.txtLogradouro.Location = new System.Drawing.Point(9, 39);
+            this.txtLogradouro.Name = "txtLogradouro";
+            this.txtLogradouro.Size = new System.Drawing.Size(305, 22);
+            this.txtLogradouro.TabIndex = 12;
             // 
-            // txtCep
+            // lblLogradouro
             // 
-            this.txtCep.EstadosExibicaoPossiveis = new EstadoExibicao[] {
-        EstadoExibicao.Incluindo};
-            this.txtCep.Font = new System.Drawing.Font("Verdana", 9F);
-            this.txtCep.Location = new System.Drawing.Point(9, 123);
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(83, 22);
-            this.txtCep.TabIndex = 25;
+            this.lblLogradouro.AutoSize = true;
+            this.lblLogradouro.EstadosExibicaoPossiveis = new EstadoExibicao[0];
+            this.lblLogradouro.Font = new System.Drawing.Font("Verdana", 9F);
+            this.lblLogradouro.Location = new System.Drawing.Point(6, 22);
+            this.lblLogradouro.Name = "lblLogradouro";
+            this.lblLogradouro.Size = new System.Drawing.Size(80, 14);
+            this.lblLogradouro.TabIndex = 14;
+            this.lblLogradouro.Text = "Logradouro";
             // 
             // btnConsultar
             // 
@@ -452,6 +483,7 @@
             this.btnSalvar.TabIndex = 13;
             this.btnSalvar.Text = "&Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnInserir
             // 
@@ -464,6 +496,7 @@
             this.btnInserir.TabIndex = 12;
             this.btnInserir.Text = "&Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // FormClientes
             // 
@@ -504,8 +537,8 @@
         private ComboBox cbTipo;
         private CheckBox chkInativo;
         private GroupBox grupoDados;
-        private Label txtRazaoSocial;
-        private TextBox textBox2;
+        private Label lblRazaoSocial;
+        private TextBox txtRazaoSocial;
         private TextBox txtNome;
         private Label label1;
         private TextBox txtCodigoFornecedor;

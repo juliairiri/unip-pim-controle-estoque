@@ -77,5 +77,31 @@ namespace Servico
         void AlterarLocalEstoque(ref Entidades.LocalEstoque local);
 
         #endregion
+
+        #region Operações com Cliente
+
+        [OperationContract]
+        Entidades.Cliente ObterClientePorCodigo(long codigo);
+
+        [OperationContract]
+        void InserirCliente(ref Entidades.Cliente cliente);
+
+        [OperationContract]
+        void AlterarCliente(ref Entidades.Cliente cliente);
+
+        #endregion
+
+        #region Operações com Fornecedor
+
+        [OperationContract]
+        Entidades.Fornecedor ObterFornecedorPorCodigo(long codigo);
+
+        [OperationContract]
+        void InserirFornecedor(ref Entidades.Fornecedor fornecedor);
+
+        [OperationContract]
+        void AlterarFornecedor(ref Entidades.Fornecedor fornecedor);
+
+        #endregion
     }
 }

@@ -79,6 +79,12 @@
     <Compile Include="Formularios\FormLocaisEstoque.Designer.cs">
       <DependentUpon>FormLocaisEstoque.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormPedidoCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormPedidoCompra.Designer.cs">
+      <DependentUpon>FormPedidoCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormLocaisEstoque.resx">
       <DependentUpon>FormLocaisEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormPedidoCompra.resx">
+      <DependentUpon>FormPedidoCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormProdutos.resx">
       <DependentUpon>FormProdutos.cs</DependentUpon>
@@ -222,6 +231,8 @@
     <None Include="Service References\Servico\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\DataSources\Entidades.Cliente.datasource" />
+    <None Include="Properties\DataSources\Entidades.Fornecedor.datasource" />
     <None Include="Properties\DataSources\Entidades.LocalEstoque.datasource" />
     <None Include="Properties\DataSources\Entidades.Produto.datasource" />
     <None Include="Properties\DataSources\Entidades.Unidade.datasource" />

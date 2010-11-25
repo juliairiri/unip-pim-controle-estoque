@@ -59,14 +59,14 @@ namespace Dados
             return unidade;
         }
 
-        public static void Inserir(ref Entidades.Fornecedor unidade)
+        public static void Inserir(ref Entidades.Fornecedor fornecedor)
         {
             if (s_comandoInserir == null)
             {
                 s_comandoInserir = Conexao.ObterConexao().CreateCommand();
 
                 s_comandoInserir.CommandText = @"INSERT INTO Fornecedores (Tipo, Nome, RazaoSocial, Cpf, Cnpj, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, Cep, Inativo) 
-                                                 VALUES (@tipo, @nome, @razaoSocial, @cpf, @cnpj, @logradouro, @numero, @complemento, @bairro, @cidade, @estado, @cep, @inativo)";
+                                                 VALUES (@tipo, @nome, @razaoSocial, @cpf, @cnpj, @logradouro, @numero, @complemento, @bairro, @cidade, @estado, @cep, @inativo); SELECT IDENT_CURRENT('Fornecedores')";
                 s_comandoInserir.CommandType = CommandType.Text;
                 s_comandoInserir.Prepare();
             }
@@ -76,11 +76,17 @@ namespace Dados
                     s_comandoInserir.Connection.Open();
             }
 
-            AdicionarParametros(ref s_comandoInserir, unidade);
+            AdicionarParametros(ref s_comandoInserir, fornecedor);
 
             try
             {
-                s_comandoInserir.ExecuteNonQuery();
+                object retorno = s_comandoInserir.ExecuteScalar();
+                long codigo;
+
+                if (!long.TryParse(retorno.ToString(), out codigo))
+                    codigo = 0;
+
+                fornecedor.Codigo = codigo;
             }
             catch (Exception ex)
             {
@@ -160,7 +166,7 @@ namespace Dados
 
             parametro = comando.CreateParameter();
             parametro.ParameterName = "@tipo";
-            parametro.DbType = DbType.SByte;
+            parametro.DbType = DbType.Int16;
             parametro.Value = fornecedor.Tipo;
             comando.Parameters.Add(parametro);
 
