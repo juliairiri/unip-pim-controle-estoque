@@ -1,6 +1,6 @@
 ﻿namespace Desktop.Formularios
 {
-    partial class FormClientes
+    partial class FormFornecedores
     {
         /// <summary>
         /// Required designer variable.
