@@ -7,6 +7,12 @@ namespace Utilidades
 {
     public static class StringExtensions
     {
+        /// <summary>
+        /// Replicate a string informanda n vezes
+        /// </summary>
+        /// <param name="str">string</param>
+        /// <param name="count">quantidade de vezes a ser repetida</param>
+        /// <returns>string com a quantidade de string replicadas</returns>
         public static string Replicate(this string str, int count)
         {
             StringBuilder builder = new StringBuilder(count);
