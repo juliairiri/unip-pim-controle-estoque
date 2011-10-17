@@ -6,8 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-using Entidades;
 using Desktop.Servico;
+using Entidades;
 
 namespace Desktop.Formularios
 {
