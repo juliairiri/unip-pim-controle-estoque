@@ -1,0 +1,2 @@
+Esse projeto é referente ao PIM (Projeto Integrado Multidisciplinar) do Quarto Semestre do curso de Análise e Desenvolvimento de Sistemas.
+O objetivo desse projeto é a criação de um Sistema de Controle de Estoque.
